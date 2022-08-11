@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Zap";
+  src: url("../fonts/ZapHumanist.otf");
+}
+
+@font-face {
+  font-family: "RageItalic";
+  src: url("../fonts/Rage Italic.ttf");
+}
+
+.timeline-viewport {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.timeline-viewport::-webkit-scrollbar {
+  display: none;
+}
