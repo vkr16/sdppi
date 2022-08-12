@@ -1,18 +1,26 @@
-@font-face {
-  font-family: "Zap";
-  src: url("../fonts/ZapHumanist.otf");
+.scrollable-y {
+  overflow-y: auto;
 }
 
-@font-face {
-  font-family: "RageItalic";
-  src: url("../fonts/Rage Italic.ttf");
+.bg-light-kominfo {
+  background-color: rgba(0, 69, 142, 0.1);
 }
 
-.timeline-viewport {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.bg-kominfo {
+  background-color: rgba(0, 69, 142, 0.8);
+  color: #f8f9fa !important;
 }
 
-.timeline-viewport::-webkit-scrollbar {
-  display: none;
+.btn-kominfo {
+  background-color: rgba(0, 69, 142, 0.8);
+  color: #ffffff !important;
+}
+
+.btn-kominfo:hover {
+  background-color: rgba(0, 69, 142, 1);
+  color: #ffffff !important;
+}
+.btn-kominfo:focus {
+  background-color: rgba(0, 69, 142, 1);
+  color: #ffffff !important;
 }

@@ -33,4 +33,9 @@ class Pages extends BaseController
     {
         return view('kontak');
     }
+
+    public function faq()
+    {
+        return view('faq');
+    }
 }

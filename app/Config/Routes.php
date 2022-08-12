@@ -41,6 +41,20 @@ $routes->get('/data-pos', 'Pages::datapos');
 $routes->get('/data-telekomunikasi', 'Pages::datatelekomunikasi');
 $routes->get('/data-penyiaran', 'Pages::datapenyiaran');
 $routes->get('/kontak', 'Pages::kontak');
+$routes->get('/faq', 'Pages::faq');
+
+
+
+$routes->get('/login', 'Auth::login');
+
+
+
+$routes->get('/admin/', 'Admin::index');
+$routes->get('/admin/pos', 'Admin::pos');
+$routes->get('/admin/telekomunikasi', 'Admin::telekomunikasi');
+$routes->get('/admin/penyiaran', 'Admin::penyiaran');
+
+
 
 /*
  * --------------------------------------------------------------------
