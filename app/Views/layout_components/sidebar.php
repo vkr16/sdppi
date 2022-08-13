@@ -1,7 +1,7 @@
 <section id="sidebar-section">
     <div class="offcanvas-lg offcanvas-start custom-sidebar bg-light text-dark" data-bs-scroll="true" tabindex="-1" id="sidebarPanelOffCanvas" aria-labelledby="sidebarPanelOffCanvasLabel" style=" min-width: 250px;width: 250px;max-width: 250px;">
         <div class="custom-sidebar bg-light text-dark vh-100 scrollable-y hide-scrollbar px-2">
-            <a href="#home" class="py-3 mb-3 container-fluid d-flex gap-2 align-items-center sticky-top bg-light text-dark border-bottom border-light border-opacity-25 text-decoration-none" id="sidebar-header" style="z-index: 2000">
+            <a href="#home" class="py-3 mb-3 container-fluid d-flex gap-2 align-items-center sticky-top bg-light text-dark border-bottom border-light border-opacity-25 text-decoration-none" id="sidebar-header">
                 <img src="<?= IMAGES_URL ?>/logo-banner.png" alt="" class="w-100">
             </a>
 
@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#dashboard" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-pengguna">
+                    <a href="<?= HOST_URL ?>/admin/pengguna" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-pengguna">
                         <div class=" m-0"> <i class="fa-solid fa-users-cog"></i> &nbsp; Manajemen Pengguna</div>
                     </a>
                 </li>

@@ -45,14 +45,20 @@ $routes->get('/faq', 'Pages::faq');
 
 
 
-$routes->get('/login', 'Auth::login');
-
-
-
 $routes->get('/admin/', 'Admin::index');
 $routes->get('/admin/pos', 'Admin::pos');
 $routes->get('/admin/telekomunikasi', 'Admin::telekomunikasi');
 $routes->get('/admin/penyiaran', 'Admin::penyiaran');
+$routes->get('/admin/pengguna', 'Admin::pengguna');
+
+
+
+// Authentication
+$routes->get('/login', 'Auth::login');
+$routes->post('/login', 'Auth::authenticate');
+$routes->get('/logout', 'Auth::logout');
+$routes->post('/register', 'Auth::register');
+
 
 
 

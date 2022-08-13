@@ -22,20 +22,7 @@
     <div class="d-flex">
         <?= $this->include('layout_components/sidebar'); ?>
         <section class="vh-100 w-100 scrollable-y">
-            <div class="bg-light text-dark d-flex justify-content-between align-items-center w-100" style="height: 62px">
-                <span type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarPanelOffCanvas" aria-controls="sidebarPanelOffCanvas" class="text-decoration-none text-dark h2 m-0 ms-3 d-lg-none">
-                    <i class="fa-solid fa-bars"></i>
-                </span>
-                <div class="ms-auto me-4 dropdown-center ">
-                    <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" role="button">
-                        <i class="fa-solid fa-user-tie me-1"></i> Fikri Miftah Akmaludin
-                    </span>
-                    <ul class="dropdown-menu bg-light mt-2 border-0">
-                        <li><a class="dropdown-item text-dark" href="#"><i class="fa-solid fa-user-gear"></i> &nbsp; My Account</a></li>
-                        <li><a class="dropdown-item text-dark" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp; Logout </a></li>
-                    </ul>
-                </div>
-            </div>
+            <?= $this->include('layout_components/topbar-admin'); ?>
             <div class="w-100">
                 <div class="container-fluid">
                     <div class="col-md-12 d-flex justify-content-between align-items-center p-3 my-2">
