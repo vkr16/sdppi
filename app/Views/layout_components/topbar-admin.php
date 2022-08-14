@@ -26,11 +26,11 @@
                 <form action="">
                     <div class="mb-3">
                         <label for="newuserpass" class="form-label">Password Baru</label>
-                        <input required type="password" class="form-control" id="newuserpass" placeholder="Password Baru">
+                        <input autocomplete="new-password" required type="password" class="form-control" id="newuserpass" placeholder="Password Baru">
                     </div>
                     <div class="mb-3">
                         <label for="newuserpass2" class="form-label">Ulangi Password Baru</label>
-                        <input required type="password" class="form-control" id="newuserpass2" placeholder="Ulangi Password Baru">
+                        <input autocomplete="new-password" required type="password" class="form-control" id="newuserpass2" placeholder="Ulangi Password Baru">
                     </div>
                     <input type="text" hidden id="useridonsession" value="<?= $userDataArray['id'] ?>">
                 </form>

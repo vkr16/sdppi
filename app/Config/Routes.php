@@ -55,6 +55,12 @@ $routes->post('/admin/pengguna/updateUser', 'Admin::updateUser');
 $routes->post('/admin/pengguna/deleteUser', 'Admin::deleteUser');
 $routes->post('/admin/pengguna/resetPassUser', 'Admin::resetPassUser');
 
+$routes->post('/admin/pos/singleInput', 'Admin::singleInputPos');
+$routes->post('/admin/pos/getSingleData', 'Admin::getSingleDataPos');
+$routes->post('/admin/pos/updateData', 'Admin::updateDataPos');
+$routes->post('/admin/pos/deleteData', 'Admin::deleteDataPos');
+$routes->post('/admin/pos/batchUpload', 'Admin::batchUploadPos');
+
 
 
 // Authentication

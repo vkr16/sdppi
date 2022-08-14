@@ -322,7 +322,6 @@
         }
 
         function showDeletePrompt(id, name) {
-            console.log(id, name)
             Notiflix.Confirm.show(
                 'Konfirmasi Penghapusan',
                 'Apakah anda ingin menghapus ' + name + ' dari daftar pengguna?',
@@ -347,7 +346,6 @@
         }
 
         function showResetModal(id, name) {
-            console.log(name);
             $('#resetPassUser').modal('show');
             $('#target-reset').html(name);
             $('#resetid').val(id);

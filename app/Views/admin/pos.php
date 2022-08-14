@@ -60,86 +60,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>Agung Gemilang perkasa</td>
-                                                <td>Jarberstrunk</td>
-                                                <td>KOTA ADM. JAKARTA UTARA, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>agpradio.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>AJN Solusindo</td>
-                                                <td>Jartaptup, NAP</td>
-                                                <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                                                <td>Rekomendasi Pencabutan Izin</td>
-                                                <td>ajn.co.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Alita Prayamitra</td>
-                                                <td>Jartaptup</td>
-                                                <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>alita.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Alssa Corporindo</td>
-                                                <td>Jarberstrunk</td>
-                                                <td>KOTA ADM. JAKARTA TIMUR, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>alssacorp.co.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Amron Citinet</td>
-                                                <td>Jartaplok PS</td>
-                                                <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>citinet.co.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Angkasa Komunikasi Global Utama</td>
-                                                <td>ISP, Jartaptup</td>
-                                                <td>KOTA ADM. JAKARTA PUSAT, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>angkasa.net.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Agung Gemilang perkasa</td>
-                                                <td>Jarberstrunk</td>
-                                                <td>KOTA ADM. JAKARTA UTARA, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>agpradio.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Alita Prayamitra</td>
-                                                <td>Jartaptup</td>
-                                                <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>alita.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Amron Citinet</td>
-                                                <td>Jartaplok PS</td>
-                                                <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>citinet.co.id</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>Angkasa Komunikasi Global Utama</td>
-                                                <td>ISP, Jartaptup</td>
-                                                <td>KOTA ADM. JAKARTA PUSAT, DKI JAKARTA</td>
-                                                <td>Aktif</td>
-                                                <td>angkasa.net.id</td>
-                                            </tr>
+                                            <?php foreach ($posDataArray as $index => $pos) { ?>
+                                                <tr>
+                                                    <td role="button" onclick="openUpdateDataModal(<?= $pos['id']; ?>)"></td>
+                                                    <td role="button" onclick="openUpdateDataModal(<?= $pos['id']; ?>)"><?= $pos['nama']; ?></td>
+                                                    <td role="button" onclick="openUpdateDataModal(<?= $pos['id']; ?>)"><?= $pos['jenis_layanan']; ?></td>
+                                                    <td role="button" onclick="openUpdateDataModal(<?= $pos['id']; ?>)"><?= $pos['domisili']; ?></td>
+                                                    <td role="button" onclick="openUpdateDataModal(<?= $pos['id']; ?>)"><?= $pos['status']; ?></td>
+                                                    <td><a class="text-decoration-none" href="http://<?= $pos['website']; ?>" target="_blank"><?= $pos['website']; ?></a></td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -160,104 +90,85 @@
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="nav-single" role="tabpanel" aria-labelledby="nav-single-input-tab" tabindex="0">
-                                                <form action="" class="mt-4">
-                                                    <div class="mb-3">
-                                                        <label for="inputnamapenyelenggara" class="form-label">Nama Penyelenggara</label>
-                                                        <input required type="text" class="form-control" id="inputnamapenyelenggara" placeholder="Nama Penyelenggara">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="inputjenislayanan" class="form-label">Jenis Layanan</label>
-                                                        <input required type="text" class="form-control" id="inputjenislayanan" placeholder="Jenis Layanan">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="inputlokasi" class="form-label">Domisili Penyelenggara</label>
-                                                        <input required type="text" class="form-control" id="inputlokasi" placeholder="Domisili Penyelenggara">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="inputstatus" class="form-label">Status</label>
-                                                        <input required type="text" class="form-control" id="inputstatus" placeholder="Status">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="inputwebsite" class="form-label">Website</label>
-                                                        <input required type="text" class="form-control" id="inputwebsite" placeholder="Website">
-                                                    </div>
-                                                    <button class="btn btn-kominfo"><i class="fa-solid fa-floppy-disk"></i> &nbsp;Simpan</button>
-                                                </form>
+                                                <div class="mb-3 mt-4">
+                                                    <label for="inputnamapenyelenggara" class="form-label">Nama Penyelenggara</label>
+                                                    <input required type="text" class="form-control" id="inputnamapenyelenggara" placeholder="Nama Penyelenggara">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="inputjenislayanan" class="form-label">Jenis Layanan</label>
+                                                    <input required type="text" class="form-control" id="inputjenislayanan" placeholder="Jenis Layanan">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="inputdomisilipenyelenggara" class="form-label">Domisili Penyelenggara</label>
+                                                    <input required type="text" class="form-control" id="inputdomisilipenyelenggara" placeholder="Domisili Penyelenggara">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="inputstatuspenyelenggara" class="form-label">Status</label>
+                                                    <input required type="text" class="form-control" id="inputstatuspenyelenggara" placeholder="Status">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="inputwebsitepenyelenggara" class="form-label">Website</label>
+                                                    <input required type="text" class="form-control" id="inputwebsitepenyelenggara" placeholder="Website">
+                                                </div>
+                                                <button class="btn btn-kominfo" onclick="singleInput()"><i class="fa-solid fa-floppy-disk"></i> &nbsp;Simpan</button>
                                             </div>
                                             <div class="tab-pane fade" id="nav-batch" role="tabpanel" aria-labelledby="nav-batch-input-tab" tabindex="0">
-                                                <form action="" class="mt-4">
+                                                <form action="pos/batchUpload" method="POST" class="mt-4" enctype="multipart/form-data">
                                                     <div class="mb-3">
                                                         <label for="formFile" class="form-label">Upload CSV File</label>
-                                                        <input class="form-control" type="file" id="formFile">
+                                                        <input class="form-control" type="file" id="formFile" name="file">
                                                     </div>
                                                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
                                                         <button class="btn btn-kominfo"> <i class="fa-solid fa-upload"></i> &nbsp;Upload Data</button>
-                                                        <a href="#GSheetDocumentTemplate" target="csvGenerator" class="btn btn-success"> <i class="fa-solid fa-file-csv"></i> &nbsp;Open CSV Generator</a>
+                                                        <a href="https://docs.google.com/spreadsheets/d/1X2mckiKnySCVQ1Bocla1FwJec-9Ynup7qNMQoIbx-AY/edit?usp=sharing" target="csvGenerator" class="btn btn-success"> <i class="fa-solid fa-file-csv"></i> &nbsp;Template CSV</a>
                                                     </div>
                                                 </form>
-
-
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header bg-light-kominfo">
-                                    </div>
-                                    <div class="card-body">
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </button>
-
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editDataPenyelenggara" tabindex="-1" data-bs-backdrop="static" aria-labelledby="editDataPenyelenggaraLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content editDataPenyelenggara">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-file-pen fa-fw"></i></i> &nbsp; Update Data Penyelenggara</h5>
+                            <h5 class="modal-title" id="editDataPenyelenggaraLabel"><i class="fa-solid fa-file-pen fa-fw"></i></i> &nbsp; Update Data Penyelenggara</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="">
-                                <div class="mb-3">
-                                    <label for="updatenamapenyelenggara" class="form-label">Nama Penyelenggara</label>
-                                    <input required type="text" class="form-control" id="updatenamapenyelenggara" placeholder="Nama Penyelenggara">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="updatejenislayanan" class="form-label">Jenis Layanan</label>
-                                    <input required type="text" class="form-control" id="updatejenislayanan" placeholder="Jenis Layanan">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="updatelokasi" class="form-label">Domisili Penyelenggara</label>
-                                    <input required type="text" class="form-control" id="updatelokasi" placeholder="Domisili Penyelenggara">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="updatestatus" class="form-label">Status</label>
-                                    <input required type="text" class="form-control" id="updatestatus" placeholder="Status">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="updatewebsite" class="form-label">Website</label>
-                                    <input required type="text" class="form-control" id="updatewebsite" placeholder="Website">
-                                </div>
-                            </form>
+                            <div class="mb-3">
+                                <label for="updatenamapenyelenggara" class="form-label">Nama Penyelenggara</label>
+                                <input required type="text" class="form-control" id="updatenamapenyelenggara" placeholder="Nama Penyelenggara">
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatejenislayanan" class="form-label">Jenis Layanan</label>
+                                <input required type="text" class="form-control" id="updatejenislayanan" placeholder="Jenis Layanan">
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatedomisili" class="form-label">Domisili Penyelenggara</label>
+                                <input required type="text" class="form-control" id="updatedomisili" placeholder="Domisili Penyelenggara">
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatestatus" class="form-label">Status</label>
+                                <input required type="text" class="form-control" id="updatestatus" placeholder="Status">
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatewebsite" class="form-label">Website</label>
+                                <input required type="text" class="form-control" id="updatewebsite" placeholder="Website">
+                            </div>
+                            <input type="text" hidden id="updateid">
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
-                            <button class="btn btn-danger"> <i class="fa-solid fa-trash-can fa-fw"></i>&nbsp; Delete</button>
+                            <button class="btn btn-danger" onclick="deleteDataPos()"> <i class="fa-solid fa-trash-can fa-fw"></i>&nbsp; Delete</button>
                             <div>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <button class="btn btn-kominfo"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
+                                <button class="btn btn-kominfo" onclick="updateDataPos()"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
                             </div>
 
                         </div>
@@ -318,6 +229,121 @@
                 });
             }).draw();
         });
+
+        function singleInput() {
+            var nama = $('#inputnamapenyelenggara').val()
+            var jenis = $('#inputjenislayanan').val()
+            var domisili = $('#inputdomisilipenyelenggara').val()
+            var status = $('#inputstatuspenyelenggara').val()
+            var website = $('#inputwebsitepenyelenggara').val()
+
+            if (nama == '' || jenis == '' || domisili == '' || status == '' || website == '') {
+                Notiflix.Notify.warning("Harap lengkapi informasi penyelenggara")
+
+            } else {
+                $.post("pos/singleInput", {
+                        nama: nama,
+                        jenis: jenis,
+                        domisili: domisili,
+                        status: status,
+                        website: website
+                    })
+                    .done(function(data) {
+                        if (data == "success") {
+                            Notiflix.Notify.success("Data berhasil disimpan")
+                            setTimeout(() => {
+                                location.replace('<?= HOST_URL ?>/admin/pos');
+                            }, "1000")
+                        }
+                    });
+            }
+        }
+
+        function openUpdateDataModal(id) {
+            Notiflix.Block.standard(".editDataPenyelenggara", "Mendapatkan Data....")
+
+            $.post("pos/getSingleData", {
+                    id: id
+                })
+                .done(function(data) {
+                    var data = JSON.parse(data)
+                    var nama = data[0].nama
+                    var jenis = data[0].jenis_layanan
+                    var domisili = data[0].domisili
+                    var status = data[0].status
+                    var website = data[0].website
+
+                    $('#editDataPenyelenggara').modal('show')
+
+                    $('#updatenamapenyelenggara').val(nama)
+                    $('#updatejenislayanan').val(jenis)
+                    $('#updatedomisili').val(domisili)
+                    $('#updatestatus').val(status)
+                    $('#updatewebsite').val(website)
+                    $('#updateid').val(id)
+
+                    Notiflix.Block.remove(".editDataPenyelenggara")
+                });
+        }
+
+        function updateDataPos() {
+            var id = $('#updateid').val()
+            var nama = $('#updatenamapenyelenggara').val()
+            var jenis = $('#updatejenislayanan').val()
+            var domisili = $('#updatedomisili').val()
+            var status = $('#updatestatus').val()
+            var website = $('#updatewebsite').val()
+
+            if (nama == '' || jenis == '' || domisili == '' || status == '' || website == '') {
+                Notiflix.Notify.warning("Harap lengkapi informasi penyelenggara")
+            } else {
+                $.post("pos/updateData", {
+                        id: id,
+                        nama: nama,
+                        jenis: jenis,
+                        domisili: domisili,
+                        status: status,
+                        website: website
+                    })
+                    .done(function(data) {
+                        if (data == "updated") {
+                            Notiflix.Notify.success("Data berhasil diperbarui")
+                            setTimeout(() => {
+                                location.replace('<?= HOST_URL ?>/admin/pos');
+                            }, "1000")
+                        }
+                    });
+            }
+        }
+
+        function deleteDataPos() {
+            var id = $('#updateid').val()
+            var nama = $('#updatenamapenyelenggara').val()
+
+            Notiflix.Confirm.show(
+                'Konfirmasi Penghapusan',
+                'Apakah anda ingin menghapus ' + nama + ' dari daftar penyelenggara pos?',
+                'Ya',
+                'Tidak',
+                () => {
+                    Notiflix.Block.dots('body', 'Syncronizing....')
+                    $.post("pos/deleteData", {
+                            id: id,
+                        })
+                        .done(function(data) {
+                            if (data == 'deleted') {
+                                Notiflix.Block.remove('body')
+                                Notiflix.Notify.success("Penyelenggara berhasil dihapus")
+                                Notiflix.Block.dots('.table-responsive')
+                                setTimeout(() => {
+                                    location.replace('<?= HOST_URL ?>/admin/pos');
+                                }, "1000")
+                            }
+                        });
+                },
+                () => {}, {},
+            );
+        }
     </script>
     <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
 
