@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\UserModel;
-
 class Admin extends BaseController
 {
 
@@ -301,6 +299,9 @@ class Admin extends BaseController
 
                 $this->posModel->insert($data);
             }
+            setcookie("batchUpload", 'success', time() + 60);  /* expire in 60 seconds */
+        } else {
+            setcookie("batchUpload", 'failed', time() + 60);  /* expire in 60 seconds */
         }
         return redirect()->to(HOST_URL . '/admin/pos');
     }

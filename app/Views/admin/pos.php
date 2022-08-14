@@ -187,6 +187,8 @@
     <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
     <script src="<?= ASSETS_URL ?>/datatables/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+
     <script>
         // Activate the sidebar item
         $('#sidebar-item-pos').addClass('sidebar-active').removeClass('sidebar-item');
@@ -345,7 +347,20 @@
             );
         }
     </script>
-    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+    <?php
+    if (isset($_COOKIE['batchUpload']) && $_COOKIE['batchUpload'] == 'success') {
+        echo ' <script>
+                Notiflix.Notify.success("Batch Upload Berhasil")
+            </script>';
+    } else if (isset($_COOKIE['batchUpload']) && $_COOKIE['batchUpload'] == 'failed') {
+        echo ' <script>
+                Notiflix.Notify.failure("Batch Upload Gagal, File CSV Tidak Sesuai")
+            </script>';
+    }
+    setcookie("batchUpload", "", time() - 3600);
+    ?>
+
+
 
 </body>
 

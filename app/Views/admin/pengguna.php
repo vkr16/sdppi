@@ -174,7 +174,7 @@
                                     <label for="newpassword2" class="form-label">Ulangi Password Baru</label>
                                     <input required type="password" class="form-control" id="newpassword2" placeholder="Ulangi Password Baru">
                                 </div>
-                                <input type="text" hidden id="useridonsession">
+                                <input type="text" hidden id="resetid">
                             </form>
                         </div>
                         <div class="modal-footer">
