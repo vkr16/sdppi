@@ -58,21 +58,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($usersDataArray as $index => $user) { ?>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><?= $user['name']; ?></td>
-                                                    <td><?= $user['email']; ?></td>
-                                                    <td><?= ($user['status'] == 'active') ? "Aktif" : 'Ditangguhkan'; ?></td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap gap-2 justify-content-around">
-                                                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can fa-fw"></i></button>
-                                                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square fa-fw"></i></button>
-                                                            <button class="btn btn-success btn-sm"><i class="fa-solid fa-unlock-keyhole fa-fw"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
+                                            <?php foreach ($usersDataArray as $index => $user) {
+                                                if (base64_encode($user['email']) != $_SESSION['sdppi_session']) {
+                                            ?>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td><?= $user['name']; ?></td>
+                                                        <td><?= $user['email']; ?></td>
+                                                        <td><?= ($user['status'] == 'active') ? "Aktif" : 'Ditangguhkan'; ?></td>
+                                                        <td>
+                                                            <div class="d-flex flex-wrap gap-2 justify-content-around">
+                                                                <button class="btn btn-danger btn-sm" onclick="showDeletePrompt('<?= $user['id']; ?>','<?= $user['name']; ?>')"><i class="fa-solid fa-trash-can fa-fw"></i></button>
+                                                                <button class="btn btn-primary btn-sm" onclick="showEditModal('<?= $user['id'] ?>')"><i class="fa-solid fa-pen-to-square fa-fw"></i></button>
+                                                                <button class="btn btn-success btn-sm" onclick="showResetModal('<?= $user['id']; ?>','<?= $user['name']; ?>')"><i class="fa-solid fa-unlock-keyhole fa-fw"></i></button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                            <?php }
+                                            } ?>
 
 
                                         </tbody>
@@ -114,50 +117,69 @@
                 </div>
             </div>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- Modal Update User-->
+            <div class="modal fade" id="editUser" tabindex="-1" data-bs-backdrop="static" aria-labelledby="editUserLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-file-pen fa-fw"></i></i> &nbsp; Update Data Penyelenggara</h5>
+                            <h5 class="modal-title" id="editUserLabel"><i class="fa-solid fa-file-pen fa-fw"></i></i> &nbsp; Update Data Pengguna</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id="editUserBody">
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="updatenamapenyelenggara" class="form-label">Nama Penyelenggara</label>
-                                    <input required type="text" class="form-control" id="updatenamapenyelenggara" placeholder="Nama Penyelenggara">
+                                    <label for="updatenamapengguna" class="form-label">Nama</label>
+                                    <input required type="text" class="form-control" id="updatenamapengguna" placeholder="Nama">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="updatejenislayanan" class="form-label">Jenis Layanan</label>
-                                    <input required type="text" class="form-control" id="updatejenislayanan" placeholder="Jenis Layanan">
+                                    <label for="updateemailpengguna" class="form-label">Email</label>
+                                    <input required type="text" class="form-control" id="updateemailpengguna" placeholder="Email">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="updatelokasi" class="form-label">Domisili Penyelenggara</label>
-                                    <input required type="text" class="form-control" id="updatelokasi" placeholder="Domisili Penyelenggara">
+                                    <label class="form-label" for="updatestatuspengguna">Status</label>
+                                    <select class="form-select" id="updatestatuspengguna">
+                                        <option value="active">Aktif</option>
+                                        <option value="suspended">Tangguhkan</option>
+                                    </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="updatestatus" class="form-label">Status</label>
-                                    <input required type="text" class="form-control" id="updatestatus" placeholder="Status">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="updatewebsite" class="form-label">Website</label>
-                                    <input required type="text" class="form-control" id="updatewebsite" placeholder="Website">
-                                </div>
+                                <input type="text" hidden id="updateid">
                             </form>
                         </div>
-                        <div class="modal-footer d-flex justify-content-between">
-                            <button class="btn btn-danger"> <i class="fa-solid fa-trash-can fa-fw"></i>&nbsp; Delete</button>
-                            <div>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <button class="btn btn-kominfo"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button class="btn btn-kominfo" onclick="updateUser()"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Modal Reset Password-->
+            <div class="modal fade" id="resetPassUser" tabindex="-1" data-bs-backdrop="static" aria-labelledby="resetPassUserLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="resetPassUserLabel"><i class="fa-solid fa-file-pen fa-fw"></i></i> &nbsp; Reset Password Pengguna</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="resetPassUserBody">
+                            <p class="fs-4 px-2 py-1 bg-light-kominfo rounded">Reset Password :
+                                <span id="target-reset"></span>
+                            </p>
+                            <form action="">
+                                <div class="mb-3">
+                                    <label for="newpassword" class="form-label">Password Baru</label>
+                                    <input required type="password" class="form-control" id="newpassword" placeholder="Password Baru">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newpassword2" class="form-label">Ulangi Password Baru</label>
+                                    <input required type="password" class="form-control" id="newpassword2" placeholder="Ulangi Password Baru">
+                                </div>
+                                <input type="text" hidden id="useridonsession">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button class="btn btn-kominfo" onclick="resetPassword()"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
                         </div>
                     </div>
                 </div>
@@ -179,15 +201,6 @@
         $('#sidebar-item-pengguna').addClass('sidebar-active').removeClass('sidebar-item');
         // $('#management-collapse').addClass('show');
         // $('#management-collapse-toggle').attr('aria-expanded', 'true');
-
-        Notiflix.Notify.init({
-            width: '300px',
-            position: 'center-top',
-            closeButton: false,
-            fontSize: '14px',
-            distance: '30px',
-            cssAnimationStyle: 'from-top',
-        });
 
         $(document).ready(function() {
             var t = $('#pengguna-table').DataTable({
@@ -261,7 +274,114 @@
                     })
             }
         }
+
+        function showEditModal(id) {
+            Notiflix.Block.standard('#editUserBody', 'Mendapatkan Data....', {
+                backgroundColor: 'rgba(0,0,0,1)',
+                messageColor: 'rgba(255,255,255,1)',
+            });
+
+            $.post("pengguna/getUser", {
+                    userid: id
+                })
+                .done(function(data) {
+                    var userdata = JSON.parse(data)
+                    Notiflix.Block.remove('#editUserBody');
+                    $('#updatenamapengguna').val(userdata[0].name)
+                    $('#updateemailpengguna').val(userdata[0].email)
+                    $("#updatestatuspengguna").val(userdata[0].status).change();
+                    $('#updateid').val(userdata[0].id)
+
+                });
+            $('#editUser').modal('show');
+        }
+
+        function updateUser() {
+            var id = $('#updateid').val()
+            var name = $('#updatenamapengguna').val()
+            var email = $('#updateemailpengguna').val()
+            var status = $("#updatestatuspengguna").val()
+            $.post("pengguna/updateUser", {
+                    id: id,
+                    name: name,
+                    email: email,
+                    status: status,
+                })
+                .done(function(data) {
+                    if (data == 'empty field') {
+                        Notiflix.Notify.warning("Harap lengkapi semua kolom informasi pengguna")
+                    } else if (data == 'email already used') {
+                        Notiflix.Notify.warning("Email sudah digunakan")
+                    } else if (data == 'updated') {
+                        Notiflix.Notify.success("Berhasil memperbarui data pengguna")
+                        setTimeout(() => {
+                            location.replace('<?= HOST_URL ?>/admin/pengguna');
+                        }, "1000")
+                    }
+                });
+        }
+
+        function showDeletePrompt(id, name) {
+            console.log(id, name)
+            Notiflix.Confirm.show(
+                'Konfirmasi Penghapusan',
+                'Apakah anda ingin menghapus ' + name + ' dari daftar pengguna?',
+                'Ya',
+                'Tidak',
+                () => {
+                    Notiflix.Block.dots('body', 'Syncronizing....')
+                    $.post("pengguna/deleteUser", {
+                            id: id,
+                        })
+                        .done(function(data) {
+                            if (data == 'deleted') {
+                                Notiflix.Block.remove('body')
+                                Notiflix.Notify.success("Pengguna berhasil dihapus")
+                                Notiflix.Block.dots('.table-responsive')
+                                location.replace('<?= HOST_URL ?>/admin/pengguna');
+                            }
+                        });
+                },
+                () => {}, {},
+            );
+        }
+
+        function showResetModal(id, name) {
+            console.log(name);
+            $('#resetPassUser').modal('show');
+            $('#target-reset').html(name);
+            $('#resetid').val(id);
+        }
+
+        function resetPassword() {
+            var name = $('#target-reset').html()
+            var id = $('#resetid').val()
+            var npass = $('#newpassword').val()
+            var cnpass = $('#newpassword2').val()
+
+            if (npass == '' || cnpass == '') {
+                Notiflix.Notify.warning("Password tidak boleh kosong")
+            } else {
+                if (npass == cnpass) {
+                    $.post("pengguna/resetPassUser", {
+                            id: id,
+                            password: npass
+                        })
+                        .done(function(data) {
+                            if (data == "reset") {
+                                $('#resetPassUser').modal('hide');
+                                $('#newpassword').val('')
+                                $('#newpassword2').val('')
+                                Notiflix.Notify.success("Password untuk " + name + " telah diatur ulang")
+                            }
+                        });
+                } else {
+                    Notiflix.Notify.warning("Password konfirmasi tidak cocok")
+                }
+            }
+        }
     </script>
+    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
 
 </body>
 

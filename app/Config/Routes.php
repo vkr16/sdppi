@@ -50,6 +50,10 @@ $routes->get('/admin/pos', 'Admin::pos');
 $routes->get('/admin/telekomunikasi', 'Admin::telekomunikasi');
 $routes->get('/admin/penyiaran', 'Admin::penyiaran');
 $routes->get('/admin/pengguna', 'Admin::pengguna');
+$routes->post('/admin/pengguna/getUser', 'Admin::getUser');
+$routes->post('/admin/pengguna/updateUser', 'Admin::updateUser');
+$routes->post('/admin/pengguna/deleteUser', 'Admin::deleteUser');
+$routes->post('/admin/pengguna/resetPassUser', 'Admin::resetPassUser');
 
 
 

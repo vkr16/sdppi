@@ -62,3 +62,7 @@ input[type="color"]:focus,
   box-shadow: 0 0 0 0.25rem rgba(0, 69, 142, 0.5);
   outline: 0 none;
 }
+
+.notiflix-confirm-buttons > a {
+  text-decoration: none !important;
+}

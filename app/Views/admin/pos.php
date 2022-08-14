@@ -273,6 +273,7 @@
 
     <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
     <script src="<?= ASSETS_URL ?>/datatables/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script>
@@ -318,6 +319,8 @@
             }).draw();
         });
     </script>
+    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+
 </body>
 
 </html>
