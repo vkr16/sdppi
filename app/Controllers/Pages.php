@@ -8,6 +8,7 @@ class Pages extends BaseController
     protected $telekomunikasiModel;
     protected $penyiaranModel;
     protected $infoModel;
+    protected $faqModel;
 
     function __construct()
     {
@@ -15,11 +16,22 @@ class Pages extends BaseController
         $this->telekomunikasiModel = model('TelekomunikasiModel', true, $db);
         $this->penyiaranModel = model('PenyiaranModel', true, $db);
         $this->infoModel = model('InfoModel', true, $db);
+        $this->faqModel = model('FaqModel', true, $db);
     }
 
     public function index()
     {
-        return view('beranda');
+
+        $posCount = $this->posModel->findAll();
+        $telekomunikasiCount = $this->telekomunikasiModel->findAll();
+        $penyiaranCount = $this->penyiaranModel->findAll();
+
+
+        $data = [
+            'chart' => [count($posCount), count($telekomunikasiCount), count($penyiaranCount)]
+        ];
+
+        return view('beranda', $data);
     }
 
     public function informasi()
@@ -74,6 +86,12 @@ class Pages extends BaseController
 
     public function faq()
     {
-        return view('faq');
+        $faqData = $this->faqModel->findAll();
+
+        $data = [
+            'faqDataArray' => $faqData,
+        ];
+
+        return view('faq', $data);
     }
 }

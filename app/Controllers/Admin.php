@@ -11,6 +11,7 @@ class Admin extends BaseController
     protected $telekomunikasiModel;
     protected $penyiaranModel;
     protected $infoModel;
+    protected $faqModel;
 
     function __construct()
     {
@@ -20,6 +21,7 @@ class Admin extends BaseController
         $this->telekomunikasiModel = model('TelekomunikasiModel', true, $db);
         $this->penyiaranModel = model('PenyiaranModel', true, $db);
         $this->infoModel = model('InfoModel', true, $db);
+        $this->faqModel = model('FaqModel', true, $db);
     }
 
     public function index()
@@ -591,5 +593,103 @@ class Admin extends BaseController
         if ($this->infoModel->where('title', $title)->set('content', $content)->update()) {
             return redirect()->to(HOST_URL . '/admin/informasi');
         }
+    }
+
+    public function faq()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        // Getting User Data
+        $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
+
+        $faqData = $this->faqModel->findAll();
+
+        $data = [
+            'userDataArray' => $userData,
+            'faqDataArray' => $faqData,
+        ];
+
+        return view('admin/faq', $data);
+    }
+
+    public function newQuestion()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $question = $_POST['newquestion'];
+        $answer = $_POST['newanswer'];
+
+        $data = [
+            'question' => $question,
+            'answer' => $answer,
+        ];
+
+        if ($this->faqModel->insert($data)) {
+            setcookie("newquestion", 'success', time() + 10);  /* expire in 60 seconds */
+        } else {
+            setcookie("newquestion", 'failed', time() + 10);  /* expire in 60 seconds */
+        }
+        return redirect()->to(HOST_URL . '/admin/faq');
+    }
+
+    public function deleteQuestion()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $id  = $_POST['id'];
+
+        if ($this->faqModel->where('id', $id)->delete()) {
+            $response = "deleted";
+        } else {
+            $response = "failed";
+        }
+        return $response;
+    }
+
+    public function editQuestion()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $id  = $_POST['id'];
+        $editquestion = $_POST['editquestion'];
+        $editanswer = $_POST['editanswer'];
+
+        $data = [
+            'question' => $editquestion,
+            'answer' => $editanswer
+
+        ];
+        if ($this->faqModel->where('id', $id)->set($data)->update()) {
+            setcookie("editquestion", 'success', time() + 10);  /* expire in 60 seconds */
+        } else {
+            setcookie("editquestion", 'success', time() + 10);  /* expire in 60 seconds */
+        }
+        return redirect()->to(HOST_URL . '/admin/faq');
+    }
+
+    public function getQuestion()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $id  = $_POST['id'];
+
+        $questionData = $this->faqModel->where('id', $id)->findAll();
+
+        return json_encode($questionData);
     }
 }

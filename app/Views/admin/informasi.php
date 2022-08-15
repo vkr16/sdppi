@@ -49,8 +49,7 @@
                         <nav aria-label="breadcrumb" class="m-0 col-md-5 d-flex align-items-center justify-content-end">
                             <ol class="breadcrumb m-0 ">
                                 <li class="breadcrumb-item">Admin</li>
-                                <li class="breadcrumb-item">Manajemen Data</li>
-                                <li class="breadcrumb-item active" aria-current="page">Pos</li>
+                                <li class="breadcrumb-item active" aria-current="page">Manajemen Informasi</li>
                             </ol>
                         </nav>
                     </div>
@@ -146,8 +145,8 @@
     <script>
         // Activate the sidebar item
         $('#sidebar-item-informasi').addClass('sidebar-active').removeClass('sidebar-item');
-        $('#management-collapse').addClass('show');
-        $('#management-collapse-toggle').attr('aria-expanded', 'true');
+        // $('#management-collapse').addClass('show');
+        // $('#management-collapse-toggle').attr('aria-expanded', 'true');
 
         function editRegulasi(title) {
             $('#editRegulasiPanel').show();

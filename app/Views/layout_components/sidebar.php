@@ -20,17 +20,17 @@
                         <ul class="btn-toggle-nav list-unstyled">
                             <li>
                                 <a href="<?= HOST_URL ?>/admin/pos" class="mb-2 ps-5 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-pos">
-                                    <div class=" m-0"> <i class="fa-solid fa-truck-fast"></i> &nbsp; Pos</div>
+                                    <div class=" m-0"> <i class="fa-solid fa-truck-fast fa-fw"></i> &nbsp; Pos</div>
                                 </a>
                             </li>
                             <li>
                                 <a href="<?= HOST_URL ?>/admin/telekomunikasi" class="mb-2 ps-5 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-telekomunikasi">
-                                    <div class=" m-0"> <i class="fa-solid fa-tower-cell"></i> &nbsp; Telekomunikasi</div>
+                                    <div class=" m-0"> <i class="fa-solid fa-tower-cell fa-fw"></i> &nbsp; Telekomunikasi</div>
                                 </a>
                             </li>
                             <li>
                                 <a href="<?= HOST_URL ?>/admin/penyiaran" class="mb-2 ps-5 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-penyiaran">
-                                    <div class=" m-0"> <i class="fa-solid fa-satellite-dish"></i> &nbsp; Penyiaran</div>
+                                    <div class=" m-0"> <i class="fa-solid fa-satellite-dish fa-fw"></i> &nbsp; Penyiaran</div>
                                 </a>
                             </li>
                         </ul>
@@ -38,12 +38,17 @@
                 </li>
                 <li>
                     <a href="<?= HOST_URL ?>/admin/informasi" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-informasi">
-                        <div class=" m-0"> <i class="fa-solid fa-circle-info"></i> &nbsp; Manajemen Informasi</div>
+                        <div class=" m-0"> <i class="fa-solid fa-circle-info fa-fw"></i> &nbsp; Manajemen Informasi</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= HOST_URL ?>/admin/faq" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-faq">
+                        <div class=" m-0"> <i class="fa-solid fa-clipboard-question fa-fw"></i> &nbsp; Manajemen FAQ</div>
                     </a>
                 </li>
                 <li>
                     <a href="<?= HOST_URL ?>/admin/pengguna" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-pengguna">
-                        <div class=" m-0"> <i class="fa-solid fa-users-cog"></i> &nbsp; Manajemen Pengguna</div>
+                        <div class=" m-0"> <i class="fa-solid fa-users-cog fa-fw"></i> &nbsp; Manajemen Pengguna</div>
                     </a>
                 </li>
             </ul>

@@ -51,6 +51,7 @@ $routes->get('/admin/pos', 'Admin::pos');
 $routes->get('/admin/telekomunikasi', 'Admin::telekomunikasi');
 $routes->get('/admin/penyiaran', 'Admin::penyiaran');
 $routes->get('/admin/informasi', 'Admin::informasi');
+$routes->get('/admin/faq', 'Admin::faq');
 
 $routes->post('/admin/pengguna/getUser', 'Admin::getUser');
 $routes->post('/admin/pengguna/updateUser', 'Admin::updateUser');
@@ -77,6 +78,10 @@ $routes->post('/admin/penyiaran/batchUpload', 'Admin::batchUploadPenyiaran');
 
 $routes->post('/admin/informasi/updateRegulasi', 'Admin::updateRegulasi');
 
+$routes->post('/admin/faq/newQuestion', 'Admin::newQuestion');
+$routes->post('/admin/faq/deleteQuestion', 'Admin::deleteQuestion');
+$routes->post('/admin/faq/editQuestion', 'Admin::editQuestion');
+$routes->post('/admin/faq/getQuestion', 'Admin::getQuestion');
 
 
 // Authentication
