@@ -37,7 +37,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#dashboard" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-informasi">
+                    <a href="<?= HOST_URL ?>/admin/informasi" class="mb-2 px-3 py-2 rounded container-fluid d-flex gap-2 align-items-center sticky-top text-dark sidebar-item  text-decoration-none" id="sidebar-item-informasi">
                         <div class=" m-0"> <i class="fa-solid fa-circle-info"></i> &nbsp; Manajemen Informasi</div>
                     </a>
                 </li>

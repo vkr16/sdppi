@@ -46,10 +46,12 @@ $routes->get('/faq', 'Pages::faq');
 
 
 $routes->get('/admin/', 'Admin::index');
+$routes->get('/admin/pengguna', 'Admin::pengguna');
 $routes->get('/admin/pos', 'Admin::pos');
 $routes->get('/admin/telekomunikasi', 'Admin::telekomunikasi');
 $routes->get('/admin/penyiaran', 'Admin::penyiaran');
-$routes->get('/admin/pengguna', 'Admin::pengguna');
+$routes->get('/admin/informasi', 'Admin::informasi');
+
 $routes->post('/admin/pengguna/getUser', 'Admin::getUser');
 $routes->post('/admin/pengguna/updateUser', 'Admin::updateUser');
 $routes->post('/admin/pengguna/deleteUser', 'Admin::deleteUser');
@@ -72,6 +74,9 @@ $routes->post('/admin/penyiaran/getSingleData', 'Admin::getSingleDataPenyiaran')
 $routes->post('/admin/penyiaran/updateData', 'Admin::updateDataPenyiaran');
 $routes->post('/admin/penyiaran/deleteData', 'Admin::deleteDataPenyiaran');
 $routes->post('/admin/penyiaran/batchUpload', 'Admin::batchUploadPenyiaran');
+
+$routes->post('/admin/informasi/updateRegulasi', 'Admin::updateRegulasi');
+
 
 
 // Authentication

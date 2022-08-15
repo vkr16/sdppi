@@ -53,23 +53,13 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                    <p class="my-3">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, deserunt?<br>
-                        - Lorem ipsum dolor sit. <br>
-                        - Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos voluptas animi labore! <br>
-                        - Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia alias debitis eligendi officiis odit? <br>
-                        - Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis! <br>
-                    </p>
+                    <p class="my-3"><?= $dataRegulasi[0]['content']; ?></p>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                    <p class="my-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ducimus repellendus excepturi repellat ea recusandae, pariatur dolores dolorem unde vel rem dolor eius minus nostrum sapiente tempore consequatur inventore, officia suscipit voluptatem necessitatibus, beatae labore praesentium. Tenetur, totam esse doloribus a ut sed? Rem reprehenderit dignissimos velit cupiditate dolor!
-                    </p>
+                    <p class="my-3"><?= $dataRegulasi[1]['content']; ?></p>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                    <p class="my-3">
-                        Lorem ipslo um dolor sit amet consectetur adipisicing elit. Beatae quod blanditiis, voluptas vel officiis neque veritatis, quasi deleniti culpa labore debitis recusandae molestias iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quos repellat atque dolores laboriosam rem molestias sit nemo adipisci earum aperiam saepe commodi sapiente fuga, a quibusdam! Natus, laborum molestias reiciendis veniam hic maxime sapiente laudantium quidem non voluptates dolorum doloremque. Deserunt hic architecto nesciunt culpa error veritatis accusantium rem!
-                    </p>
+                    <p class="my-3"><?= $dataRegulasi[2]['content']; ?></p>
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ class Admin extends BaseController
     protected $posModel;
     protected $telekomunikasiModel;
     protected $penyiaranModel;
+    protected $infoModel;
 
     function __construct()
     {
@@ -18,6 +19,7 @@ class Admin extends BaseController
         $this->posModel = model('PosModel', true, $db);
         $this->telekomunikasiModel = model('TelekomunikasiModel', true, $db);
         $this->penyiaranModel = model('PenyiaranModel', true, $db);
+        $this->infoModel = model('InfoModel', true, $db);
     }
 
     public function index()
@@ -560,4 +562,34 @@ class Admin extends BaseController
         return redirect()->to(HOST_URL . '/admin/penyiaran');
     }
     //telekomunikasi end
+
+    public function informasi()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        // Getting User Data
+        $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
+
+        $regulasiData = $this->infoModel->where('feature', 'regulasi')->findAll();
+
+        $data = [
+            'userDataArray' => $userData,
+            'regulasiData' => $regulasiData,
+        ];
+
+        return view('admin/informasi', $data);
+    }
+
+    public function updateRegulasi()
+    {
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+
+        if ($this->infoModel->where('title', $title)->set('content', $content)->update()) {
+            return redirect()->to(HOST_URL . '/admin/informasi');
+        }
+    }
 }

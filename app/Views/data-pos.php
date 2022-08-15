@@ -44,86 +44,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td>Agung Gemilang perkasa</td>
-                            <td>Jarberstrunk</td>
-                            <td>KOTA ADM. JAKARTA UTARA, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>agpradio.com</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>AJN Solusindo</td>
-                            <td>Jartaptup, NAP</td>
-                            <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                            <td>Rekomendasi Pencabutan Izin</td>
-                            <td>ajn.co.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Alita Prayamitra</td>
-                            <td>Jartaptup</td>
-                            <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>alita.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Alssa Corporindo</td>
-                            <td>Jarberstrunk</td>
-                            <td>KOTA ADM. JAKARTA TIMUR, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>alssacorp.co.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Amron Citinet</td>
-                            <td>Jartaplok PS</td>
-                            <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>citinet.co.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Angkasa Komunikasi Global Utama</td>
-                            <td>ISP, Jartaptup</td>
-                            <td>KOTA ADM. JAKARTA PUSAT, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>angkasa.net.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Agung Gemilang perkasa</td>
-                            <td>Jarberstrunk</td>
-                            <td>KOTA ADM. JAKARTA UTARA, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>agpradio.com</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Alita Prayamitra</td>
-                            <td>Jartaptup</td>
-                            <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>alita.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Amron Citinet</td>
-                            <td>Jartaplok PS</td>
-                            <td>KOTA ADM. JAKARTA SELATAN, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>citinet.co.id</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Angkasa Komunikasi Global Utama</td>
-                            <td>ISP, Jartaptup</td>
-                            <td>KOTA ADM. JAKARTA PUSAT, DKI JAKARTA</td>
-                            <td>Aktif</td>
-                            <td>angkasa.net.id</td>
-                        </tr>
+                        <?php foreach ($posDataArray as $index => $pos) { ?>
+                            <tr>
+                                <td></td>
+                                <td><?= $pos['nama']; ?></td>
+                                <td><?= $pos['jenis_layanan']; ?></td>
+                                <td><?= $pos['domisili']; ?></td>
+                                <td><?= $pos['status']; ?></td>
+                                <td><a class="text-decoration-none" href="http://<?= $pos['website']; ?>" target="_blank"><?= $pos['website']; ?></a></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
