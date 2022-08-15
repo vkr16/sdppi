@@ -61,6 +61,17 @@ $routes->post('/admin/pos/updateData', 'Admin::updateDataPos');
 $routes->post('/admin/pos/deleteData', 'Admin::deleteDataPos');
 $routes->post('/admin/pos/batchUpload', 'Admin::batchUploadPos');
 
+$routes->post('/admin/telekomunikasi/singleInput', 'Admin::singleInputTelekomunikasi');
+$routes->post('/admin/telekomunikasi/getSingleData', 'Admin::getSingleDataTelekomunikasi');
+$routes->post('/admin/telekomunikasi/updateData', 'Admin::updateDataTelekomunikasi');
+$routes->post('/admin/telekomunikasi/deleteData', 'Admin::deleteDataTelekomunikasi');
+$routes->post('/admin/telekomunikasi/batchUpload', 'Admin::batchUploadTelekomunikasi');
+
+$routes->post('/admin/penyiaran/singleInput', 'Admin::singleInputPenyiaran');
+$routes->post('/admin/penyiaran/getSingleData', 'Admin::getSingleDataPenyiaran');
+$routes->post('/admin/penyiaran/updateData', 'Admin::updateDataPenyiaran');
+$routes->post('/admin/penyiaran/deleteData', 'Admin::deleteDataPenyiaran');
+$routes->post('/admin/penyiaran/batchUpload', 'Admin::batchUploadPenyiaran');
 
 
 // Authentication

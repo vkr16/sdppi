@@ -8,12 +8,16 @@ class Admin extends BaseController
     protected $session;
     protected $userModel;
     protected $posModel;
+    protected $telekomunikasiModel;
+    protected $penyiaranModel;
 
     function __construct()
     {
         $this->session = \Config\Services::session();
         $this->userModel = model('UserModel', true, $db);
         $this->posModel = model('PosModel', true, $db);
+        $this->telekomunikasiModel = model('TelekomunikasiModel', true, $db);
+        $this->penyiaranModel = model('PenyiaranModel', true, $db);
     }
 
     public function index()
@@ -62,9 +66,11 @@ class Admin extends BaseController
         // Getting User Data
         $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
 
+        $telekomunikasiData = $this->telekomunikasiModel->findAll();
 
         $data = [
             'userDataArray' => $userData,
+            'telekomunikasiDataArray' => $telekomunikasiData
         ];
         return view('admin/telekomunikasi', $data);
     }
@@ -79,9 +85,11 @@ class Admin extends BaseController
         // Getting User Data
         $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
 
+        $penyiaranData = $this->penyiaranModel->findAll();
 
         $data = [
             'userDataArray' => $userData,
+            'penyiaranDataArray' => $penyiaranData
         ];
         return view('admin/penyiaran', $data);
     }
@@ -299,11 +307,257 @@ class Admin extends BaseController
 
                 $this->posModel->insert($data);
             }
-            setcookie("batchUpload", 'success', time() + 60);  /* expire in 60 seconds */
+            setcookie("batchUpload", 'success', time() + 10);  /* expire in 60 seconds */
         } else {
-            setcookie("batchUpload", 'failed', time() + 60);  /* expire in 60 seconds */
+            setcookie("batchUpload", 'failed', time() + 10);  /* expire in 60 seconds */
         }
         return redirect()->to(HOST_URL . '/admin/pos');
     }
     //POS end
+    // Telekomunikasi
+    public function singleInputTelekomunikasi()
+    {
+        $nama = $_POST['nama'];
+        $jenis = $_POST['jenis'];
+        $domisili = $_POST['domisili'];
+        $status = $_POST['status'];
+        $website = $_POST['website'];
+
+        $data = [
+            'nama' => $nama,
+            'jenis_layanan' => $jenis,
+            'domisili' => $domisili,
+            'status' => $status,
+            'website' => $website,
+        ];
+
+        if ($this->telekomunikasiModel->insert($data)) {
+            $response = "success";
+        } else {
+            $response = "failed";
+        }
+
+        return $response;
+    }
+
+    public function getSingleDataTelekomunikasi()
+    {
+        $id = $_POST['id'];
+
+        $telekomunikasiData = $this->telekomunikasiModel->where('id', $id)->findAll();
+
+        return json_encode($telekomunikasiData);
+    }
+
+    public function updateDataTelekomunikasi()
+    {
+        $id = $_POST['id'];
+        $nama = $_POST['nama'];
+        $jenis = $_POST['jenis'];
+        $domisili = $_POST['domisili'];
+        $status = $_POST['status'];
+        $website = $_POST['website'];
+
+        $data = [
+            'nama' => $nama,
+            'jenis_layanan' => $jenis,
+            'domisili' => $domisili,
+            'status' => $status,
+            'website' => $website,
+        ];
+
+        if ($this->telekomunikasiModel->where('id', $id)->set($data)->update()) {
+            $response = "updated";
+        } else {
+            $response = "failed";
+        }
+
+        return $response;
+    }
+
+    public function deleteDataTelekomunikasi()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $id = $_POST['id'];
+
+        if ($this->telekomunikasiModel->where('id', $id)->delete()) {
+            $response  = "deleted";
+        } else {
+            $response = "failed";
+        }
+        return $response;
+    }
+
+    public function batchUploadTelekomunikasi()
+    {
+        // Allowed mime types
+        $fileMimes = array(
+            'text/x-comma-separated-values',
+            'text/comma-separated-values',
+            'application/octet-stream',
+            'application/vnd.ms-excel',
+            'application/x-csv',
+            'text/x-csv',
+            'text/csv',
+            'application/csv',
+            'application/excel',
+            'application/vnd.msexcel',
+            'text/plain'
+        );
+
+        // Validate whether selected file is a CSV file
+        if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $fileMimes)) {
+
+            // Open uploaded CSV file with read-only mode
+            $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
+
+            // Skip the first line
+            fgetcsv($csvFile);
+
+            // Parse data from CSV file line by line
+            while (($getData = fgetcsv($csvFile, 10000, ",")) !== FALSE) {
+                $data = [
+                    'nama' => $getData[0],
+                    'jenis_layanan' => $getData[1],
+                    'domisili' => $getData[2],
+                    'status' => $getData[3],
+                    'website' => $getData[4]
+                ];
+
+                $this->telekomunikasiModel->insert($data);
+            }
+            setcookie("batchUpload", 'success', time() + 10);  /* expire in 60 seconds */
+        } else {
+            setcookie("batchUpload", 'failed', time() + 10);  /* expire in 60 seconds */
+        }
+        return redirect()->to(HOST_URL . '/admin/telekomunikasi');
+    }
+    //telekomunikasi end
+    // Penyiaran
+    public function singleInputPenyiaran()
+    {
+        $nama = $_POST['nama'];
+        $jenis = $_POST['jenis'];
+        $domisili = $_POST['domisili'];
+        $status = $_POST['status'];
+        $website = $_POST['website'];
+
+        $data = [
+            'nama' => $nama,
+            'jenis_layanan' => $jenis,
+            'domisili' => $domisili,
+            'status' => $status,
+            'website' => $website,
+        ];
+
+        if ($this->penyiaranModel->insert($data)) {
+            $response = "success";
+        } else {
+            $response = "failed";
+        }
+
+        return $response;
+    }
+
+    public function getSingleDataPenyiaran()
+    {
+        $id = $_POST['id'];
+
+        $penyiaranData = $this->penyiaranModel->where('id', $id)->findAll();
+
+        return json_encode($penyiaranData);
+    }
+
+    public function updateDataPenyiaran()
+    {
+        $id = $_POST['id'];
+        $nama = $_POST['nama'];
+        $jenis = $_POST['jenis'];
+        $domisili = $_POST['domisili'];
+        $status = $_POST['status'];
+        $website = $_POST['website'];
+
+        $data = [
+            'nama' => $nama,
+            'jenis_layanan' => $jenis,
+            'domisili' => $domisili,
+            'status' => $status,
+            'website' => $website,
+        ];
+
+        if ($this->penyiaranModel->where('id', $id)->set($data)->update()) {
+            $response = "updated";
+        } else {
+            $response = "failed";
+        }
+
+        return $response;
+    }
+
+    public function deleteDataPenyiaran()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $id = $_POST['id'];
+
+        if ($this->penyiaranModel->where('id', $id)->delete()) {
+            $response  = "deleted";
+        } else {
+            $response = "failed";
+        }
+        return $response;
+    }
+
+    public function batchUploadPenyiaran()
+    {
+        // Allowed mime types
+        $fileMimes = array(
+            'text/x-comma-separated-values',
+            'text/comma-separated-values',
+            'application/octet-stream',
+            'application/vnd.ms-excel',
+            'application/x-csv',
+            'text/x-csv',
+            'text/csv',
+            'application/csv',
+            'application/excel',
+            'application/vnd.msexcel',
+            'text/plain'
+        );
+
+        // Validate whether selected file is a CSV file
+        if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $fileMimes)) {
+
+            // Open uploaded CSV file with read-only mode
+            $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
+
+            // Skip the first line
+            fgetcsv($csvFile);
+
+            // Parse data from CSV file line by line
+            while (($getData = fgetcsv($csvFile, 10000, ",")) !== FALSE) {
+                $data = [
+                    'nama' => $getData[0],
+                    'jenis_layanan' => $getData[1],
+                    'domisili' => $getData[2],
+                    'status' => $getData[3],
+                    'website' => $getData[4]
+                ];
+
+                $this->penyiaranModel->insert($data);
+            }
+            setcookie("batchUpload", 'success', time() + 10);  /* expire in 60 seconds */
+        } else {
+            setcookie("batchUpload", 'failed', time() + 10);  /* expire in 60 seconds */
+        }
+        return redirect()->to(HOST_URL . '/admin/penyiaran');
+    }
+    //telekomunikasi end
 }
