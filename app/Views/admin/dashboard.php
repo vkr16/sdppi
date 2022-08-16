@@ -23,7 +23,7 @@
         <?= $this->include('layout_components/sidebar'); ?>
         <section class="vh-100 w-100 scrollable-y">
             <?= $this->include('layout_components/topbar-admin'); ?>
-            <div class="w-100">
+            <div class="w-100 mb-5 pb-5">
                 <div class="container-fluid">
                     <div class="col-md-12 d-flex justify-content-between align-items-center p-3 my-2">
                         <p class="fs-3 fw-normal m-0">Dashboard</p>
@@ -35,6 +35,36 @@
                         </nav>
                     </div>
 
+
+
+                    <!-- Card Panels -->
+                    <div class="container-fluid mt-3 ">
+                        <div class="col-12 mb-4">
+                            <div class="card bg-light">
+                                <div class="card-body d-flex align-items-center">
+                                    <span class="col-lg-8 col-12">
+                                        <h1 class="fw-light" style="font-family: 'Nunito Sans'">Halo, <?= $userDataArray['name']; ?></h1>
+                                        <h2 class="fw-light">Selamat Datang</h2>
+                                    </span>
+                                    <img src="<?= IMAGES_URL ?>/kominfo-logo-white.png" style=" height:250px" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <hr class="mt-5">
+
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-between align-items-center p-3 mt-2">
+                        <p class="fs-3 fw-normal m-0">Data Overview</p>
+                        <!-- <nav aria-label="breadcrumb" class="m-0">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item">Admin</li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                        </nav> -->
+                    </div>
+
                     <!-- Widget -->
                     <div class="container-fluid row m-0 p-1">
                         <div class="col-12 col-md-6 p-0 p-2">
@@ -44,7 +74,7 @@
                                 </div>
                                 <span class="align-self-center d-grid gap-1">
                                     <p class="m-0">Pos</p>
-                                    <p class="fw-bold m-0">124 Data</p>
+                                    <p class="fw-bold m-0"><?= $dataCount[0]; ?> Data</p>
                                 </span>
                             </div>
                         </div>
@@ -55,7 +85,7 @@
                                 </div>
                                 <span class="align-self-center d-grid gap-1">
                                     <p class="m-0">Telekomunikasi</p>
-                                    <p class="fw-bold m-0">231 Data</p>
+                                    <p class="fw-bold m-0"><?= $dataCount[1]; ?> Data</p>
                                 </span>
                             </div>
                         </div>
@@ -66,7 +96,7 @@
                                 </div>
                                 <span class="align-self-center d-grid gap-1">
                                     <p class="m-0">Penyiaran</p>
-                                    <p class="fw-bold m-0">521 Data</p>
+                                    <p class="fw-bold m-0"><?= $dataCount[2]; ?> Data</p>
                                 </span>
                             </div>
                         </div>
@@ -77,51 +107,15 @@
                                 </div>
                                 <span class="align-self-center d-grid gap-1">
                                     <p class="m-0">Total</p>
-                                    <p class="fw-bold m-0">876 Data</p>
+                                    <p class="fw-bold m-0"><?= $dataCount[1] + $dataCount[0] + $dataCount[2]; ?> Data</p>
                                 </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Panels -->
-                    <div class="container-fluid mt-3">
-                        <div class="col-12 mb-4">
-                            <div class="card">
-                                <div class="card-header bg-light-kominfo">
-                                    <i class="fa-solid fa-line-chart fa-fw"></i> &nbsp; Panel Example
-                                </div>
-                                <div class="card-body" style="min-height: 30vh">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header bg-light-kominfo">
-                                        <i class="fa-solid fa-clipboard-list fa-fw"></i> &nbsp; Header of Panel 2
-                                    </div>
-                                    <div class="card-body">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat excepturi unde in quas rem dicta minima a officia animi, modi consequatur, quibusdam recusandae eaque, vitae rerum eum ratione! Cupiditate voluptates ut totam, porro, molestiae sed temporibus quibusdam blanditiis sapiente exercitationem voluptas a sint aliquid illo dolorum iste commodi, dolor est quas quisquam vel minima eum culpa. Nulla doloribus accusamus, unde reprehenderit magni recusandae saepe laudantium aut est hic, alias necessitatibus at iste quae, vitae modi. Dolore modi odit ducimus similique ad incidunt cupiditate quisquam non nisi obcaecati quae optio numquam architecto iste eveniet fugit accusamus minima, corporis est facilis laudantium fugiat? Illo eius voluptatibus exercitationem eaque hic vel autem eveniet nihil, laudantium numquam sint voluptas, odit obcaecati expedita similique rerum.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header bg-light-kominfo">
-                                        <i class="fa-solid fa-circle-info fa-fw"></i> &nbsp; Header of Panel 3
-                                    </div>
-                                    <div class="card-body">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat excepturi unde in quas rem dicta minima a officia animi, modi consequatur, quibusdam recusandae eaque, vitae rerum eum ratione! Cupiditate voluptates ut totam, porro, molestiae sed temporibus quibusdam blanditiis sapiente exercitationem voluptas a sint aliquid illo dolorum iste commodi, dolor est quas quisquam vel minima eum culpa. Nulla doloribus accusamus, unde reprehenderit magni recusandae saepe laudantium aut est hic, alias necessitatibus at iste quae, vitae modi. Dolore modi odit ducimus similique ad incidunt cupiditate quisquam non nisi obcaecati quae optio numquam architecto iste eveniet fugit accusamus minima, corporis est facilis laudantium fugiat? Illo eius voluptatibus exercitationem eaque hic vel autem eveniet nihil, laudantium numquam sint voluptas, odit obcaecati expedita similique rerum.
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <?= $this->include('layout_components/footer-admin'); ?>
+
         </section>
 
     </div>

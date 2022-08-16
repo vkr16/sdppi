@@ -18,12 +18,12 @@
 
 </head>
 
-<body>
+<body style="background: rgb(0,69,142);background: linear-gradient(0deg, rgba(0,69,142,0.2024160005799195) 0%, rgba(255,255,255,0.3592787456779587) 100%);">
     <?= $this->include('layout_components/navbar'); ?>
 
     <div class="col-12 container">
-        <div class="d-flex align-items-center" style="min-height: 75vh">
-            <div class="col-md-8">
+        <div class="d-lg-flex d-block align-items-center justify-content-center" style="min-height: 75vh">
+            <div class="col-lg-8 my-5">
                 <div class="d-flex justify-content-center">
                     <img src="<?= IMAGES_URL ?>/kominfo-logo.png" style="width: 100px">
                 </div>
@@ -38,10 +38,10 @@
                     <h1 class="h4 text-center lh-none mb-0" style="font-family: 'Nunito Sans'">Republik Indonesia</h1>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div>
-                    <div class="card-body ">
-                        <div style="min-height: 300px">
+            <div class="col-lg-4 d-flex justify-content-center my-5">
+                <div class="">
+                    <div class="card-body">
+                        <div style="min-height: 300px; max-width: 100%;">
                             <canvas id="chartCount"></canvas>
                         </div>
                     </div>

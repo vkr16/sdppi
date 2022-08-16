@@ -34,9 +34,13 @@ class Admin extends BaseController
         // Getting User Data
         $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
 
+        $posCount = $this->posModel->findAll();
+        $telekomunikasiCount = $this->telekomunikasiModel->findAll();
+        $penyiaranCount = $this->penyiaranModel->findAll();
 
         $data = [
             'userDataArray' => $userData,
+            'dataCount' => [count($posCount), count($telekomunikasiCount), count($penyiaranCount)]
         ];
         return view('admin/dashboard', $data);
     }
