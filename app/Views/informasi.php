@@ -40,7 +40,9 @@
         </div>
         <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 container">
             <h1 class="text-center mt-3 fw-bold h1" style="font-family: 'Nunito Sans'">Regulasi Penyelenggaraan</h1>
-            <p class="text-center mt-2 lh-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum voluptas corrupti praesentium quam modi, iusto a adipisci, sequi aspernatur, debitis totam nobis libero obcaecati hic? Harum esse rerum beatae provident.</p>
+            <p class="text-center mt-2 lh-sm">
+
+            </p>
         </div>
 
         <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 container mt-5 p-4 rounded" style="background-color: rgba(255,255,255,0.5)">

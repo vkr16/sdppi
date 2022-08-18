@@ -56,6 +56,8 @@
     <?= $this->include('layout_components/footer'); ?>
 
     <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
@@ -96,7 +98,6 @@
         );
     </script>
 
-    </script>
 </body>
 
 </html>

@@ -30,7 +30,8 @@
             </div>
             <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 container  mb-5">
                 <h1 class="text-center mt-3 fw-bold h1" style="font-family: 'Nunito Sans'">Data Penyelenggara Telekomunikasi</h1>
-                <p class="text-center mt-2 lh-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum voluptas corrupti praesentium quam modi, iusto a adipisci, sequi aspernatur, debitis totam nobis libero obcaecati hic? Harum esse rerum beatae provident.</p>
+                <p class="text-center mt-2 lh-sm"> Data berikut ini diambil dari database pada <?= date_format(date_create('now'), 'd-m-Y H:i A'); ?>
+                </p>
             </div>
             <div class="py-5 container rounded border" style="background-color: rgba(255,255,255,0.5)">
                 <div class="px-5 py-2 table-responsive">

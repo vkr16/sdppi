@@ -49,3 +49,7 @@ function changePassword() {
     }
   }
 }
+
+function developerCredit() {
+  Notiflix.Notify.info("Developer : FM. (akuonline.my.id)");
+}
