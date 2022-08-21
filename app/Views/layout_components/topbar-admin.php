@@ -35,7 +35,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button class="btn btn-kominfo" onclick="changePassword()"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
+                <button class="btn btn-kominfo" onclick="changePassword('<?= HOST_URL ?>')"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
             </div>
         </div>
     </div>

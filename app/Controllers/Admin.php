@@ -696,4 +696,64 @@ class Admin extends BaseController
 
         return json_encode($questionData);
     }
+
+    public function penyelenggara()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+        // Getting User Data
+        $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
+
+        if (isset($_GET['x'])) {
+            if ($_GET['x'] == 'Pos') {
+                $penyelenggara =  $this->posModel->findAll();
+            } else if ($_GET['x'] == 'Telekomunikasi') {
+                $penyelenggara =  $this->telekomunikasiModel->findAll();
+            } else if ($_GET['x'] == 'Penyiaran') {
+                $penyelenggara =  $this->penyiaranModel->findAll();
+            } else {
+                return redirect()->to(HOST_URL . '/admin');
+            }
+        } else {
+            return redirect()->to(HOST_URL . '/admin');
+        }
+
+
+        $data = [
+            'userDataArray' => $userData,
+            'penyelenggaraDataArray' => $penyelenggara
+        ];
+
+        return view('admin/penyelenggara', $data);
+    }
+
+    public function bulkDelete()
+    {
+        // Session Check
+        if (!$this->session->has('sdppi_session')) {
+            return redirect()->to(HOST_URL . '/login');
+        }
+
+        $ids = $_POST['ids'];
+        $x = $_POST['x'];
+
+
+        if ($x == 'Pos') {
+            $this->posModel->delete($ids);
+            $y = 'pos';
+        } else  if ($x == 'Telekomunikasi') {
+            $this->telekomunikasiModel->delete($ids);
+            $y = 'telekomunikasi';
+        } else  if ($x == 'Penyiaran') {
+            $this->penyiaranModel->delete($ids);
+            $y = 'penyiaran';
+        } else {
+            $response = "failed";
+        }
+
+        $response = "Berhasil menghapus " . count($ids) . " data";
+        return $response;
+    }
 }

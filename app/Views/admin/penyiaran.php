@@ -44,8 +44,9 @@
                     <div class="container-fluid mt-3">
                         <div class="col-12 mb-4">
                             <div class="card">
-                                <div class="card-header bg-light-kominfo">
-                                    <i class="fa-solid fa-truck-fast fa-fw"></i> &nbsp; Data Penyelenggara Penyiaran
+                                <div class="card-header bg-light-kominfo d-flex justify-content-between">
+                                    <span><i class="fa-solid fa-satellite-dish fa-fw"></i> &nbsp; Data Penyelenggara Penyiaran</span>
+                                    <a href="penyelenggara?x=Penyiaran" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-alt"></i> &nbsp; Bulk Delete</a>
                                 </div>
                                 <div class="card-body table-responsive" style="min-height: 30vh">
                                     <table id="penyiaran-table" class="table table-hover">

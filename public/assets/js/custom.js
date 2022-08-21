@@ -24,7 +24,7 @@ Notiflix.Confirm.init({
   okButtonBackground: "#00458e",
 });
 
-function changePassword() {
+function changePassword(host) {
   var id = $("#useridonsession").val();
   var npass = $("#newuserpass").val();
   var cnpass = $("#newuserpass2").val();
@@ -33,7 +33,7 @@ function changePassword() {
     Notiflix.Notify.warning("Password tidak boleh kosong");
   } else {
     if (npass == cnpass) {
-      $.post("pengguna/resetPassUser", {
+      $.post(host + "/admin/pengguna/resetPassUser", {
         id: id,
         password: npass,
       }).done(function (data) {

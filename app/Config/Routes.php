@@ -48,6 +48,8 @@ $routes->get('/faq', 'Pages::faq');
 $routes->get('/admin/', 'Admin::index');
 $routes->get('/admin/pengguna', 'Admin::pengguna');
 $routes->get('/admin/pos', 'Admin::pos');
+$routes->get('/admin/penyelenggara', 'Admin::penyelenggara');
+
 $routes->get('/admin/telekomunikasi', 'Admin::telekomunikasi');
 $routes->get('/admin/penyiaran', 'Admin::penyiaran');
 $routes->get('/admin/informasi', 'Admin::informasi');
@@ -82,6 +84,9 @@ $routes->post('/admin/faq/newQuestion', 'Admin::newQuestion');
 $routes->post('/admin/faq/deleteQuestion', 'Admin::deleteQuestion');
 $routes->post('/admin/faq/editQuestion', 'Admin::editQuestion');
 $routes->post('/admin/faq/getQuestion', 'Admin::getQuestion');
+
+$routes->post('/admin/penyelenggara/bulkDelete', 'Admin::bulkDelete');
+
 
 
 // Authentication
