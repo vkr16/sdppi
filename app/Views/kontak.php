@@ -29,24 +29,36 @@
         </div>
 
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 container mt-5 p-4 rounded row mx-auto " style="background-color: rgba(255,255,255,0.5); font-family: Nunito Sans;">
-            <div class="col-lg-5 mb-4">
+            <div class="col-lg-6 mb-4">
+                <strong><i class="fa-solid fa-location-dot fa-fw"></i> Gedung Utama Kementerian KOMINFO</strong> <br>
+                Jl. Medan Merdeka Barat No.9 <br>
+                RT.2/RW.3, Gambir, Kecamatan Gambir, <br>
+                Jakarta Pusat, DKI Jakarta 10110 <br><br>
+                &#8226; TU Dirjen PPI <br>
+                &#8226; Sekretariat Ditjen PPI <br>
+                &#8226; Direktorat Pengembangan Pita Lebar <br>
+                &#8226; Direktorat Penyiaran <br><br>
                 <strong><i class="fa-solid fa-location-dot fa-fw"></i> Gedung Sapta Pesona</strong> <br>
                 Jalan Medan Merdeka Barat No.17 <br>
-                Jakarta 10110, Indonesia <br><br>
-                <strong><i class="fa-solid fa-location-dot fa-fw"></i> Wisma Antara Lt.1</strong><br>
-                Jl. Medan Merdeka Sel. No.17, <br>
-                RT.11/RW.2, Gambir, <br>
-                Kecamatan Gambir, Kota Jakarta Pusat, <br>
-                Daerah Khusus Ibukota Jakarta 10110
+                Gambir, Jakarta Pusat<br>
+                DKI Jakarta 10110, Indonesia <br><br>
+                &#8226; Direktorat Pos PPI <br>
+                &#8226; Direktorat Telekomunikasi <br><br>
+                <strong><i class="fa-solid fa-location-dot fa-fw"></i> Wisma Antara Lt.9</strong><br>
+                Jl. Medan Merdeka Sel. No.17 <br>
+                Gambir, Kec. Gambir, Jakarta Pusat <br>
+                DKI Jakarta 10110 <br><br>
+                &#8226; Direktorat Pengendalian Pos & Informatika <br>
+
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-6">
                 <dl class="row">
-                    <dt class="col-md-4"> <i class="fa-solid fa-phone"></i> &nbsp; Telepon</dt>
-                    <dd class="col-md-8">159</dd>
-                    <dt class="col-md-4"> <i class="fa-solid fa-envelope"></i> &nbsp; Email</dt>
-                    <dd class="col-md-8"><a href="mailto:callcenter_sdppi@kominfo.go.id" class="text-decoration-none">callcenter_sdppi@kominfo.go.id</a></dd>
-                    <dt class="col-md-4"> <i class="fa-solid fa-fax"></i> &nbsp; Faksimile</dt>
-                    <dd class="col-md-8">021 3000 3111</dd>
+                    <dt class="col-md-4"> <i class="fa-brands fa-twitter"></i> &nbsp; Twitter</dt>
+                    <dd class="col-md-8"><a href="https://twitter.com/DJPPIKominfo" class="text-decoration-none">@DJPPIKominfo
+                        </a></dd>
+                    <dt class="col-md-4"> <i class="fa-brands fa-instagram"></i> &nbsp; Instagram</dt>
+                    <dd class="col-md-8"><a href="https://www.instagram.com/ditjenppi.kominfo/" class="text-decoration-none">@ditjenppi.kominfo
+                        </a></dd>
                 </dl>
             </div>
         </div>

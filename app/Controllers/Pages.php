@@ -47,9 +47,11 @@ class Pages extends BaseController
     public function datapos()
     {
         $posData = $this->posModel->findAll();
+        $lastUpdate = $this->infoModel->where('id', '4')->findAll();
 
         $data = [
             'posDataArray' => $posData,
+            'lastUpdate' => $lastUpdate
         ];
 
         return view('data-pos', $data);
@@ -58,9 +60,10 @@ class Pages extends BaseController
     public function datatelekomunikasi()
     {
         $telekomunikasiData = $this->telekomunikasiModel->findAll();
-
+        $lastUpdate = $this->infoModel->where('id', '5')->findAll();
         $data = [
             'telekomunikasiDataArray' => $telekomunikasiData,
+            'lastUpdate' => $lastUpdate
         ];
 
         return view('data-telekomunikasi', $data);
@@ -69,9 +72,10 @@ class Pages extends BaseController
     public function datapenyiaran()
     {
         $penyiaranData = $this->penyiaranModel->findAll();
-
+        $lastUpdate = $this->infoModel->where('id', '6')->findAll();
         $data = [
             'penyiaranDataArray' => $penyiaranData,
+            'lastUpdate' => $lastUpdate
         ];
 
         return view('data-penyiaran', $data);

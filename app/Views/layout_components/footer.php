@@ -9,12 +9,12 @@
 
         <ul class="nav col-md-6 justify-content-end align-items-center list-unstyled d-none d-sm-flex">
             <li class="ms-4">
-                <a class="text-light fs-4" href="https://www.instagram.com/sdppi_kominfo/">
+                <a class="text-light fs-4" href="https://www.instagram.com/ditjenppi.kominfo/">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </li>
             <li class="ms-4">
-                <a class="text-light fs-4" href="https://twitter.com/SDPPI_Kominfo">
+                <a class="text-light fs-4" href="https://twitter.com/DJPPIKominfo">
                     <i class="fa-brands fa-twitter"></i>
                 </a>
             </li>

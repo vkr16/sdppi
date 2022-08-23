@@ -66,3 +66,7 @@ input[type="color"]:focus,
 .notiflix-confirm-buttons > a {
   text-decoration: none !important;
 }
+
+a {
+  text-decoration: none;
+}

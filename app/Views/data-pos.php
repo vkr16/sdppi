@@ -29,7 +29,7 @@
         <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 container  mb-5">
             <h1 class="text-center mt-3 fw-bold h1" style="font-family: 'Nunito Sans'">Data Penyelenggara Pos</h1>
             <p class="text-center mt-2 lh-sm">
-                Data berikut ini diambil dari database pada <?= date_format(date_create('now'), 'd-m-Y H:i A'); ?>
+                Data berikut ini terakhir diperbarui pada <?= $lastUpdate[0]['content'] ?>
             </p>
         </div>
         <div class="py-5 container rounded border" style="background-color: rgba(255,255,255,0.5)">

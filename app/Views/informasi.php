@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

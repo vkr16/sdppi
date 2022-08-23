@@ -216,7 +216,13 @@ class Admin extends BaseController
             'website' => $website,
         ];
 
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
+
+
         if ($this->posModel->insert($data)) {
+            $this->infoModel->where('id', '4')->set($last_update)->update();
             $response = "success";
         } else {
             $response = "failed";
@@ -250,8 +256,11 @@ class Admin extends BaseController
             'status' => $status,
             'website' => $website,
         ];
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
         if ($this->posModel->where('id', $id)->set($data)->update()) {
+            $this->infoModel->where('id', '4')->set($last_update)->update();
             $response = "updated";
         } else {
             $response = "failed";
@@ -268,8 +277,11 @@ class Admin extends BaseController
         }
 
         $id = $_POST['id'];
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
         if ($this->posModel->where('id', $id)->delete()) {
+            $this->infoModel->where('id', '4')->set($last_update)->update();
             $response  = "deleted";
         } else {
             $response = "failed";
@@ -312,8 +324,11 @@ class Admin extends BaseController
                     'status' => $getData[3],
                     'website' => $getData[4]
                 ];
-
+                $last_update = [
+                    'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+                ];
                 $this->posModel->insert($data);
+                $this->infoModel->where('id', '4')->set($last_update)->update();
             }
             setcookie("batchUpload", 'success', time() + 10);  /* expire in 60 seconds */
         } else {
@@ -339,7 +354,12 @@ class Admin extends BaseController
             'website' => $website,
         ];
 
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
+
         if ($this->telekomunikasiModel->insert($data)) {
+            $this->infoModel->where('id', '5')->set($last_update)->update();
             $response = "success";
         } else {
             $response = "failed";
@@ -373,7 +393,10 @@ class Admin extends BaseController
             'status' => $status,
             'website' => $website,
         ];
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
+        $this->infoModel->where('id', '5')->set($last_update)->update();
         if ($this->telekomunikasiModel->where('id', $id)->set($data)->update()) {
             $response = "updated";
         } else {
@@ -391,8 +414,11 @@ class Admin extends BaseController
         }
 
         $id = $_POST['id'];
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
         if ($this->telekomunikasiModel->where('id', $id)->delete()) {
+            $this->infoModel->where('id', '5')->set($last_update)->update();
             $response  = "deleted";
         } else {
             $response = "failed";
@@ -435,8 +461,12 @@ class Admin extends BaseController
                     'status' => $getData[3],
                     'website' => $getData[4]
                 ];
+                $last_update = [
+                    'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+                ];
 
                 $this->telekomunikasiModel->insert($data);
+                $this->infoModel->where('id', '5')->set($last_update)->update();
             }
             setcookie("batchUpload", 'success', time() + 10);  /* expire in 60 seconds */
         } else {
@@ -462,7 +492,12 @@ class Admin extends BaseController
             'website' => $website,
         ];
 
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
+
         if ($this->penyiaranModel->insert($data)) {
+            $this->infoModel->where('id', '6')->set($last_update)->update();
             $response = "success";
         } else {
             $response = "failed";
@@ -496,8 +531,11 @@ class Admin extends BaseController
             'status' => $status,
             'website' => $website,
         ];
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
         if ($this->penyiaranModel->where('id', $id)->set($data)->update()) {
+            $this->infoModel->where('id', '6')->set($last_update)->update();
             $response = "updated";
         } else {
             $response = "failed";
@@ -514,8 +552,11 @@ class Admin extends BaseController
         }
 
         $id = $_POST['id'];
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
         if ($this->penyiaranModel->where('id', $id)->delete()) {
+            $this->infoModel->where('id', '6')->set($last_update)->update();
             $response  = "deleted";
         } else {
             $response = "failed";
@@ -558,8 +599,12 @@ class Admin extends BaseController
                     'status' => $getData[3],
                     'website' => $getData[4]
                 ];
+                $last_update = [
+                    'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+                ];
 
                 $this->penyiaranModel->insert($data);
+                $this->infoModel->where('id', '6')->set($last_update)->update();
             }
             setcookie("batchUpload", 'success', time() + 10);  /* expire in 60 seconds */
         } else {
@@ -739,14 +784,19 @@ class Admin extends BaseController
         $ids = $_POST['ids'];
         $x = $_POST['x'];
 
-
+        $last_update = [
+            'content' => date_format(date_create('now'), 'd-m-Y H:i A')
+        ];
         if ($x == 'Pos') {
+            $this->infoModel->where('id', '4')->set($last_update)->update();
             $this->posModel->delete($ids);
             $y = 'pos';
         } else  if ($x == 'Telekomunikasi') {
+            $this->infoModel->where('id', '5')->set($last_update)->update();
             $this->telekomunikasiModel->delete($ids);
             $y = 'telekomunikasi';
         } else  if ($x == 'Penyiaran') {
+            $this->infoModel->where('id', '6')->set($last_update)->update();
             $this->penyiaranModel->delete($ids);
             $y = 'penyiaran';
         } else {
