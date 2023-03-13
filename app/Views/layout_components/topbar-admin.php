@@ -8,7 +8,7 @@
         </span>
         <ul class="dropdown-menu bg-light mt-2 border-0">
             <li><a class="dropdown-item text-dark" href="#change-password" role="button" data-bs-toggle="modal" data-bs-target="#changePassword"><i class="fa-solid fa-user-gear"></i> &nbsp; Ubah Password</a></li>
-            <li><a class="dropdown-item text-dark" href="<?= HOST_URL ?>/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp; Logout </a></li>
+            <li><a class="dropdown-item text-dark" href="<?= base_url() ?>/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp; Logout </a></li>
         </ul>
     </div>
 </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button class="btn btn-kominfo" onclick="changePassword('<?= HOST_URL ?>')"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
+                <button class="btn btn-kominfo" onclick="changePassword('<?= base_url() ?>')"><i class="fa-solid fa-floppy-disk fa-fw"></i> &nbsp;Simpan Perubahan</button>
             </div>
         </div>
     </div>

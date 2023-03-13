@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <title>Beranda</title>
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
         <div class="d-lg-flex d-block align-items-center justify-content-center" style="min-height: 75vh">
             <div class="col-lg-8 my-5">
                 <div class="d-flex justify-content-center">
-                    <img src="<?= IMAGES_URL ?>/kominfo-logo.png" style="width: 100px">
+                    <img src="<?= base_url('public/assets/img') ?>/kominfo-logo.png" style="width: 100px">
                 </div>
                 <div class=" mt-4">
                     <h1 class="h3 text-center fw-semibold" style="font-family: 'Nunito Sans'">Pusat Informasi Data Penyelenggara Pos Dan Informatika</h1>
@@ -55,9 +55,9 @@
 
     <?= $this->include('layout_components/footer'); ?>
 
-    <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+    <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 

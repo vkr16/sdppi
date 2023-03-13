@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navigation Bar">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="<?= IMAGES_URL ?>/logo-banner.png" alt="" width="250">
+            <img src="<?= base_url('public/assets/img') ?>/logo-banner.png" alt="" width="250">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbar-menu" style="font-family: 'Open Sans'">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="<?= HOST_URL ?>/">Beranda</a>
+                    <a class="nav-link" href="<?= base_url() ?>/">Beranda</a>
                 </li>
                 <li class="nav-item mx-2">
                     <a class="nav-link" href="informasi">Informasi Penyelenggaraan</a>

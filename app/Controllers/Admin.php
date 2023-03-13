@@ -28,7 +28,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -49,7 +49,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -68,7 +68,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -87,7 +87,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -106,7 +106,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -125,7 +125,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $userId = $_POST['userid'];
@@ -138,7 +138,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id = $_POST['id'];
@@ -172,7 +172,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id = $_POST['id'];
@@ -273,7 +273,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id = $_POST['id'];
@@ -334,7 +334,7 @@ class Admin extends BaseController
         } else {
             setcookie("batchUpload", 'failed', time() + 10);  /* expire in 60 seconds */
         }
-        return redirect()->to(HOST_URL . '/admin/pos');
+        return redirect()->to(base_url() . '/admin/pos');
     }
     //POS end
     // Telekomunikasi
@@ -410,7 +410,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id = $_POST['id'];
@@ -472,7 +472,7 @@ class Admin extends BaseController
         } else {
             setcookie("batchUpload", 'failed', time() + 10);  /* expire in 60 seconds */
         }
-        return redirect()->to(HOST_URL . '/admin/telekomunikasi');
+        return redirect()->to(base_url() . '/admin/telekomunikasi');
     }
     //telekomunikasi end
     // Penyiaran
@@ -548,7 +548,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id = $_POST['id'];
@@ -610,7 +610,7 @@ class Admin extends BaseController
         } else {
             setcookie("batchUpload", 'failed', time() + 10);  /* expire in 60 seconds */
         }
-        return redirect()->to(HOST_URL . '/admin/penyiaran');
+        return redirect()->to(base_url() . '/admin/penyiaran');
     }
     //telekomunikasi end
 
@@ -618,7 +618,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -640,7 +640,7 @@ class Admin extends BaseController
         $content = $_POST['content'];
 
         if ($this->infoModel->where('title', $title)->set('content', $content)->update()) {
-            return redirect()->to(HOST_URL . '/admin/informasi');
+            return redirect()->to(base_url() . '/admin/informasi');
         }
     }
 
@@ -648,7 +648,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         // Getting User Data
@@ -668,7 +668,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $question = $_POST['newquestion'];
@@ -684,14 +684,14 @@ class Admin extends BaseController
         } else {
             setcookie("newquestion", 'failed', time() + 10);  /* expire in 60 seconds */
         }
-        return redirect()->to(HOST_URL . '/admin/faq');
+        return redirect()->to(base_url() . '/admin/faq');
     }
 
     public function deleteQuestion()
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id  = $_POST['id'];
@@ -708,7 +708,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id  = $_POST['id'];
@@ -725,14 +725,14 @@ class Admin extends BaseController
         } else {
             setcookie("editquestion", 'success', time() + 10);  /* expire in 60 seconds */
         }
-        return redirect()->to(HOST_URL . '/admin/faq');
+        return redirect()->to(base_url() . '/admin/faq');
     }
 
     public function getQuestion()
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $id  = $_POST['id'];
@@ -746,7 +746,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
         // Getting User Data
         $userData = $this->userModel->find(base64_decode($this->session->get('sdppi_session')));
@@ -759,10 +759,10 @@ class Admin extends BaseController
             } else if ($_GET['x'] == 'Penyiaran') {
                 $penyelenggara =  $this->penyiaranModel->findAll();
             } else {
-                return redirect()->to(HOST_URL . '/admin');
+                return redirect()->to(base_url() . '/admin');
             }
         } else {
-            return redirect()->to(HOST_URL . '/admin');
+            return redirect()->to(base_url() . '/admin');
         }
 
 
@@ -778,7 +778,7 @@ class Admin extends BaseController
     {
         // Session Check
         if (!$this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/login');
+            return redirect()->to(base_url() . '/login');
         }
 
         $ids = $_POST['ids'];

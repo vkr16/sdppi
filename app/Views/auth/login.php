@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <title>Admin Login</title>
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
         <div class="card col-sm-8 col-md-6 col-lg-4 p-4">
 
             <div class="mx-auto text-center">
-                <a href="<?= HOST_URL ?>/"><img src="<?= IMAGES_URL ?>/kominfo-logo.png" class="w-100" alt="" style="max-width: 20%"></a>
+                <a href="<?= base_url() ?>/"><img src="<?= base_url('public/assets/img') ?>/kominfo-logo.png" class="w-100" alt="" style="max-width: 20%"></a>
                 <h1 class="h2 fw-bold mt-2" style="font-family: 'Nunito Sans'">Admin Login</h1>
             </div>
             <div class="mb-3">
@@ -41,9 +41,9 @@
         </div>
     </div>
 
-    <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/notiflix-aio-3.2.5.min.js"></script>
 
     <script>
         Notiflix.Notify.init({
@@ -78,7 +78,7 @@
                     } else if (data == 'password incorrect') {
                         Notiflix.Notify.failure("Password anda tidak sesuai, harap periksa kembali penulisan anda")
                     } else if (data == 'login valid') {
-                        location.replace('<?= HOST_URL ?>/admin');
+                        location.replace('<?= base_url() ?>/admin');
                     }
                 });
         }

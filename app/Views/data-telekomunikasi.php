@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <title>Data Penyelenggara Telekomunikasi</title>
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/datatables/datatables.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/datatables/datatables.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
         <div class="container">
 
             <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 container mt-5 text-center">
-                <img src="<?= IMAGES_URL ?>/kominfo-logo.png" alt="" style="width: 25%;">
+                <img src="<?= base_url('public/assets/img') ?>/kominfo-logo.png" alt="" style="width: 25%;">
             </div>
             <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 container  mb-5">
                 <h1 class="text-center mt-3 fw-bold h1" style="font-family: 'Nunito Sans'">Data Penyelenggara Telekomunikasi</h1>
@@ -67,9 +67,9 @@
         <?= $this->include('layout_components/footer'); ?>
 
 
-        <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
-        <script src="<?= ASSETS_URL ?>/datatables/datatables.min.js"></script>
+        <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= base_url('public/assets') ?>/js/jquery-3.6.0.min.js"></script>
+        <script src="<?= base_url('public/assets') ?>/datatables/datatables.min.js"></script>
 
         <script>
             $(document).ready(function() {

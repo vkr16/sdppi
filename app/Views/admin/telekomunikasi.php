@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Penyelenggara Telekomunikasi</title>
 
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/datatables/datatables.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/datatables/datatables.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,12 +183,12 @@
     </div>
 
 
-    <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/datatables/datatables.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/datatables/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/custom.js"></script>
 
     <script>
         // Activate the sidebar item
@@ -255,7 +255,7 @@
                         if (data == "success") {
                             Notiflix.Notify.success("Data berhasil disimpan")
                             setTimeout(() => {
-                                location.replace('<?= HOST_URL ?>/admin/telekomunikasi');
+                                location.replace('<?= base_url() ?>/admin/telekomunikasi');
                             }, "1000")
                         }
                     });
@@ -312,7 +312,7 @@
                         if (data == "updated") {
                             Notiflix.Notify.success("Data berhasil diperbarui")
                             setTimeout(() => {
-                                location.replace('<?= HOST_URL ?>/admin/telekomunikasi');
+                                location.replace('<?= base_url() ?>/admin/telekomunikasi');
                             }, "1000")
                         }
                     });
@@ -339,7 +339,7 @@
                                 Notiflix.Notify.success("Penyelenggara berhasil dihapus")
                                 Notiflix.Block.dots('.table-responsive')
                                 setTimeout(() => {
-                                    location.replace('<?= HOST_URL ?>/admin/telekomunikasi');
+                                    location.replace('<?= base_url() ?>/admin/telekomunikasi');
                                 }, "1000")
                             }
                         });

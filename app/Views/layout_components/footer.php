@@ -2,7 +2,7 @@
     <footer class="container d-flex flex-wrap justify-content-between align-items-center my-4">
         <div class="col-md-6 d-flex align-items-center">
             <a href="/" class="me-2 mb-md-0 text-light text-decoration-none lh-1">
-                <img src="<?= IMAGES_URL ?>/kominfo-logo-white.png" width="30" alt="">
+                <img src="<?= base_url('public/assets/img') ?>/kominfo-logo-white.png" width="30" alt="">
             </a>
             <span class="mb-md-0 text-light">&copy; 2022 Ditjen PPI Kemkominfo</span>
         </div>

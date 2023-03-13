@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publikasi Informasi</title>
 
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/datatables/datatables.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/datatables/datatables.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h2 class="mb-4">Sedang menyunting regulasi : <span class="regtitle" style="text-transform: capitalize"></span></h2>
-                                        <form action="<?= HOST_URL ?>/admin/informasi/updateRegulasi" method="POST">
+                                        <form action="<?= base_url() ?>/admin/informasi/updateRegulasi" method="POST">
                                             <input type="text" name="title" id="title" hidden>
                                             <textarea name="content" id="content" class="form-control" rows="10"></textarea>
                                             <span class="btn btn-secondary mt-3" onclick="dismissEditor()">Batal</span>
@@ -115,7 +115,7 @@
         <!-- <div class="modal modal-lg fade" id="editRegulasiModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editRegulasiModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="<?= HOST_URL ?>/admin/informasi/updateRegulasi" method="POST">
+                    <form action="<?= base_url() ?>/admin/informasi/updateRegulasi" method="POST">
                         <div class="modal-header">
                             <h5 class="modal-title" id="editRegulasiModalLabel">Modal title</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -136,11 +136,11 @@
     </div>
 
 
-    <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/datatables/datatables.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+    <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/datatables/datatables.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/custom.js"></script>
 
     <script>
         // Activate the sidebar item

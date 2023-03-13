@@ -14,7 +14,7 @@ class Auth extends BaseController
     public function login()
     {
         if ($this->session->has('sdppi_session')) {
-            return redirect()->to(HOST_URL . '/admin');
+            return redirect()->to(base_url() . '/admin');
         } else {
             return view('auth/login');
         }
@@ -80,6 +80,6 @@ class Auth extends BaseController
     public function logout()
     {
         $this->session->destroy();
-        return redirect()->to(HOST_URL);
+        return redirect()->to(base_url());
     }
 }

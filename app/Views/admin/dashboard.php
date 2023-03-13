@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
                                         <h1 class="fw-light" style="font-family: 'Nunito Sans'">Halo, <?= $userDataArray['name']; ?></h1>
                                         <h2 class="fw-light">Selamat Datang</h2>
                                     </span>
-                                    <img src="<?= IMAGES_URL ?>/kominfo-logo-white.png" style=" height:250px" alt="">
+                                    <img src="<?= base_url('public/assets/img') ?>/kominfo-logo-white.png" style=" height:250px" alt="">
                                 </div>
                             </div>
                         </div>
@@ -121,15 +121,15 @@
     </div>
 
 
-    <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/notiflix-aio-3.2.5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script>
         // Activate the sidebar item
         $('#sidebar-item-dashboard').addClass('sidebar-active').removeClass('sidebar-item')
     </script>
-    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/custom.js"></script>
 
 </body>
 

@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Akun Pengguna</title>
 
-    <link rel="shortcut icon" href="<?= HOST_URL ?>/public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/datatables/datatables.min.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/datatables/datatables.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets') ?>/css/custom.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,10 +191,10 @@
     </div>
 
 
-    <script src="<?= ASSETS_URL ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/jquery-3.6.0.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/notiflix-aio-3.2.5.min.js"></script>
-    <script src="<?= ASSETS_URL ?>/datatables/datatables.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/jquery-3.6.0.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/notiflix-aio-3.2.5.min.js"></script>
+    <script src="<?= base_url('public/assets') ?>/datatables/datatables.min.js"></script>
 
     <script>
         // Activate the sidebar item
@@ -255,7 +255,7 @@
             if (password !== password2) {
                 Notiflix.Notify.failure("Password Tidak Cocok")
             } else {
-                $.post("<?= HOST_URL ?>/register", {
+                $.post("<?= base_url() ?>/register", {
                         name: name,
                         email: email,
                         password: password,
@@ -268,7 +268,7 @@
                         } else if (data == 'registered') {
                             Notiflix.Notify.success("Berhasil didaftarkan")
                             setTimeout(() => {
-                                location.replace('<?= HOST_URL ?>/admin/pengguna');
+                                location.replace('<?= base_url() ?>/admin/pengguna');
                             }, "1000")
                         }
                     })
@@ -315,7 +315,7 @@
                     } else if (data == 'updated') {
                         Notiflix.Notify.success("Berhasil memperbarui data pengguna")
                         setTimeout(() => {
-                            location.replace('<?= HOST_URL ?>/admin/pengguna');
+                            location.replace('<?= base_url() ?>/admin/pengguna');
                         }, "1000")
                     }
                 });
@@ -337,7 +337,7 @@
                                 Notiflix.Block.remove('body')
                                 Notiflix.Notify.success("Pengguna berhasil dihapus")
                                 Notiflix.Block.dots('.table-responsive')
-                                location.replace('<?= HOST_URL ?>/admin/pengguna');
+                                location.replace('<?= base_url() ?>/admin/pengguna');
                             }
                         });
                 },
@@ -379,7 +379,7 @@
             }
         }
     </script>
-    <script src="<?= ASSETS_URL ?>/js/custom.js"></script>
+    <script src="<?= base_url('public/assets') ?>/js/custom.js"></script>
 
 </body>
 
