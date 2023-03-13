@@ -1,63 +1,105 @@
-# CodeIgniter 4 Application Starter
+<br>
+<p align="center">
+<img src="public/assets/img/kominfo-logo.png" alt"Inventoman logo" width="20%"></img>
+<br>
+<div align="center">
+<img src="https://img.shields.io/badge/App Version-1.0.1-orange"></img> &nbsp; 
+<img src="https://img.shields.io/badge/PHP%20Version-7.4-blue"></img> &nbsp;
+<img src="https://img.shields.io/badge/CodeIgniter-4.2.3-red"></img> &nbsp;
+<img src="https://img.shields.io/badge/Bootstrap-5.2.0-blueviolet"></img> &nbsp;
+<img src="https://img.shields.io/badge/JQuery-3.6.1-blue"></img> &nbsp;
+</div>
+</p>
 
-## What is CodeIgniter?
+# Project Portfolio: Mandrapostel SDPPI
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Welcome to my portfolio project repository! This is a work of mine that I've done on the Mandrapostel SDPPI project as a freelancer.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+# Project Overview
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+**SDPPI** stands for "Sumber Daya dan Perangkat Pos dan Informatika" which means postal and information technology resources. This is a special division of the ministry of communication and information technology of the Republic of Indonesia which is responsible for carrying out the formulation and implementation of policies in the management of radio frequency spectrum and satellite orbits as well as the standardization of postal and information technology equipment, while **Mandrapostel** itself stands for "Manajemen Data Penyelenggara Pos dan Telekomunikasi" which means Post and Telecommunications Operators Data Management System.
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+This project aims to create a web application that functions to manage data on postal and information technology providers including broadcasting and telecommunication as well as providing information to the public regarding the list of organizers and other related information.
 
-## Installation & updates
+In this project, I was responsible for developing the web application using PHP programming language and CodeIgniter 4 as the main back-end programming stack and also using HTML, CSS, Bootstrap, JavaScript, Jquery and some other js library to build it's front-end.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+# Project Details
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Here are some of the details of the project:
 
-## Setup
+- Client: Direktorat Jenderal SDPPI Kementerian Kominfo RI
+- Duration: around 2 Weeks
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## Technologies
 
-## Important Change with index.php
+- PHP 7.4
+- CodeIgniter 4
+- HTML
+- CSS
+- JavaScript
+- Bootstrap 5.2.0
+- Some other JavaScript library
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+# Project Achievements
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Here are some of the key achievements of the project:
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- Completed the project on time even less than the estimated time of 1 Month
+- Satisfied the client with the final results that full-filled the client's expectations
+- Completed project that were submitted directly by well-known institutions in Indonesia
 
-## Repository Management
+# Project Challenges
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Here are some of the challenges I faced while working on the project:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- This is my first codeigniter based project as a freelancer after learning codeigniter for about 3 weeks
 
-## Server Requirements
+# Why I'm Sharing These Projects
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+I'm sharing these projects as part of my portfolio to showcase my skills and experience as a freelance developer. I hope that they demonstrate my ability to work with different clients and technologies and my commitment to delivering high-quality work.
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+# How to Use This Project
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+This project is meant to showcase my skills and experience as a freelance developer. You are welcome to explore the project and use it as inspiration for your own work.
 
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+**<p style="color:#ff4444">However, please note that this project was done for a specific client and may not be suitable for your own needs. Please do not use any of the code or assets without permission especially for commercial use because maybe some of the assets in this project are copyrighted.</p>**
+
+## Installation Guide
+
+1. [Download the portfolio release here](https://github.com/vkr16/sdppi/releases/tag/v1.0.1-portfolio)
+2. Extract the zip to your server or localhost directory
+3. Import `sdppi.sql` to your database server
+4. Configure these variable in .env file
+   - `app.baseURL = [YOUR BASE URL HERE | example: http://localhost/sdppi/]`
+   - `database.default.hostname = [YOUR DATABASE HOST | example: localhost]`
+   - `database.default.database = [YOUR DATABASE NAME | example: sdppi]`
+   - `database.default.username = [YOUR DATABASE USERNAME | example: root]`
+   - `database.default.password = [YOUR DATABASE PASSWORD | example: root]`
+
+## Basic Usage Guide
+
+1. Run the application by accessing the base url
+2. The first page you will see is the customer page, in this page customer can input their order number to upload photos or check the order progress
+3. You can access the admin login page in `{Base URL}/login` 
+    - example : `http://localhost/sdppi/login`
+4. Login with an account
+   - Pre-registered administrator account :
+     - `Email = admin@akuonline.my.id`
+     - `Password = admin`
+5. If somehow you can not access template csv feature inside the application you can change the Google sheet document url with the new one here is how : 
+    - Create new google sheets document
+        - Share the access and copy the link
+        - Copy the content of `templates.xlsx` file into your new google sheets document
+    - Change the `GOOGLE_SHEET` variable value in `.env` file with new google sheet url
+    
+6. You can explore the rest of the features on this application by yourself
+
+# Contact Me
+
+If you have any questions about this project or would like to discuss a potential freelance opportunity, please feel free to contact me. My email address is fikri.droid16@gmail.com or visit my web page at [akuonline.my.id](https://akuonline.my.id).
+
+Thank you for taking the time to review my project portfolio!
+
+<hr>
+<p align="center">&copy; 2022 Fikri Miftah Akmaludin </p>
+
