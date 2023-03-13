@@ -121,7 +121,7 @@
                                                     </div>
                                                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
                                                         <button class="btn btn-kominfo"> <i class="fa-solid fa-upload"></i> &nbsp;Upload Data</button>
-                                                        <a href="https://docs.google.com/spreadsheets/d/1X2mckiKnySCVQ1Bocla1FwJec-9Ynup7qNMQoIbx-AY/edit?usp=sharing" target="csvGenerator" class="btn btn-success"> <i class="fa-solid fa-file-csv"></i> &nbsp;Template CSV</a>
+                                                        <a href="<?= $_ENV['GOOGLE_SHEET'] ?>" target="csvGenerator" class="btn btn-success"> <i class="fa-solid fa-file-csv"></i> &nbsp;Template CSV</a>
                                                     </div>
                                                 </form>
                                             </div>
