@@ -97,6 +97,6 @@ define('EVENT_PRIORITY_HIGH', 10);
 /**
  * Custom Constant Declared by Developer - FM
  */
-define('HOST_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/fastwork-1');
+define('HOST_URL', 'http://' . $_SERVER['SERVER_NAME'] . ':8074/fastwork-1');
 define('ASSETS_URL', HOST_URL . '/public/assets');
 define('IMAGES_URL', ASSETS_URL . '/img');
